@@ -1,257 +1,131 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IUCEE Club - College Chapter</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="script.js"></script>
-  
-  
-  <style>
-    :root {
-      --primary-color: #4A4A4A;
-      --secondary-color: #556B2F;
-      --accent-gold: #DAA520;
-      --accent-light: #C0C0C0;
-      --neutral-light: #F8F8F8;
-      --neutral-dark: #333333;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IASF | Innovation & Sustainability Forum</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body{margin:0;font-family:Inter,sans-serif;background:#f8fafc;}
+h1,h2,h3{font-family:Poppins,sans-serif;}
+
+#navbar{
+position:fixed;
+top:18px;
+left:50%;
+transform:translateX(-50%);
+width:95%;
+max-width:1280px;
+z-index:1000;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(22px);
+-webkit-backdrop-filter:blur(22px);
+border:1px solid rgba(255,255,255,.22);
+border-radius:22px;
+box-shadow:0 10px 35px rgba(0,0,0,.12);
+transition:.35s;
+}
+#navbar.scrolled{
+background:rgba(255,255,255,.82);
+backdrop-filter:blur(28px);
+-webkit-backdrop-filter:blur(28px);
+}
+.nav-link{color:#fff;transition:.3s;}
+#navbar.scrolled .nav-link{color:#1e293b;}
+.nav-link:hover{color:#9BE200;transform:translateY(-2px);}
+.join-btn{background:#2563eb;color:#fff;font-weight:600;transition:.3s;}
+.join-btn:hover{background:#1d4ed8;}
+
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;}
+.hero img{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+filter:saturate(108%) contrast(104%);
+transform:scale(1.02);
+}
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+115deg,
+rgba(8,17,31,.82) 0%,
+rgba(8,17,31,.58) 35%,
+rgba(8,17,31,.32) 68%,
+rgba(8,17,31,.12) 100%);
+backdrop-filter:blur(3px);
+-webkit-backdrop-filter:blur(3px);
+}
+.hero-content{position:relative;z-index:2;}
+</style>
 </head>
-<body class="scroll-smooth bg-[#563b1e] overflow-x-hidden">
-  <!-- Navbar -->
-  <header class="bg-white shadow-md sticky top-0 z-50">
 
-  <nav class="bg-[#f4cba1] shadow-md px-6  sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <!-- Logo -->
-      <img src="images/logo.png" style="width: 200px;">
-      <img src="images/iu.png" class="md:ml-[-200px] sm:ml-[-100px] sm:w-[20px]" style="width: 130px;">
-      <!-- Hamburger (mobile) -->
-      <button id="menu-toggle" class="md:hidden text-[#f1efe6] focus:outline-none text-3xl">
-        ☰
-      </button>
-  
-      <!-- Nav Links -->
-      <ul id="nav-links" class="hidden md:flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 text-md font-medium absolute md:static top-16 left-0 w-full md:w-auto bg-[#f4cba1] md:bg-transparent px-6 py-4 md:py-0">
-        <li><a href="index.html" class="font-bold text-[#563b1e] hover:text-[#4B2A07]">Home</a></li>
-        <li><a href="about.html" class="font-bold text-[#563b1e] hover:text-[#4B2A07]">About</a></li>
-        <li><a href="mentor.html" class="font-bold text-[#563b1e] hover:text-[#4B2A07]">Mentorship</a></li>
-        <li><a href="vol.html" class="font-bold text-[#563b1e] hover:text-[#4B2A07]">Team</a></li>
-        <li><a href="iasf25.html" class="font-bold text-[#563b1e] hover:text-[#4B2A07]">IASF 2025</a></li>
-        <li><a href="com.html" class="font-bold text-[#563b1e] hover:text-[#4B2A07]">Community Reachout</a></li>
-        <li><a href="reg.html" target="_blank" class="font-bold text-[#563b1e] hover:text-[#4B2A07]">Register</a></li>
-      </ul>
-    </div>
-  </nav>
-  </header>
+<body>
 
-  <!-- Hero Banner -->
-  <div class="bg-cover " style="background-image: url('https://i.pinimg.com/736x/ca/27/d7/ca27d70f2eb4b24ec6458630ff519c95.jpg');">
-    <div class="p-[20px] ">
-  <section id="home" class="relative h-[80vh] overflow-x-hidden md:mt-[10px]">
-    <!-- Image + Text Slides -->
-    <div class="absolute inset-0">
-      <img id="carouselImage" src="images/g2.jpg" alt="Slide" class="w-full h-full object-cover transition-opacity duration-1000 opacity-100">
-      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-    </div>
-  
-    <!-- Overlay Text -->
-    <div class="relative z-10 flex items-center justify-center h-full text-white text-center px-4">
-      <div>
-        <h2 id="carouselHeading" class="text-4xl md:text-5xl font-bold mb-4">WELCOME TO <br> KLE TECH IUCEE CHAPTER</h2>
-        <p id="carouselText" class="max-w-xl mx-auto text-lg">Empowering students through innovation, mentorship, and global collaboration.</p>
-      </div>
-    </div>
-  </section></div>
-  
-  
-  <!-- About IUCEE + Image -->
-  <section id="about" class="py-5 px-6  bg-cover bg-center">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
-      <img src="https://shannonchance.net/wp-content/uploads/2024/01/img_5629.jpg?w=1024" alt="College Image" class="w-full md:w-1/2 rounded-lg shadow-lg" data-aos="fade-right"  data-aos-duration="500">
-      <div class="md:w-1/2" data-aos="fade-left"  data-aos-duration="500">
-        <h3 class="text-3xl font-bold mb-4 text-[#563b1e]">About Our College & IUCEE</h3>
-        <p class="text-[#261708] text-lg">The IUCEE Club at KLE Technological University is a student-driven initiative that unites inquisitive individuals who are passionate about engineering education, innovation, and collaboration. We collaborate closely with IUCEE (Indo Universal Collaboration for Engineering Education) to host workshops, mentoring programs, technical presentations, and community projects that facilitate student growth beyond traditional learning.<br> 
+<header id="navbar">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
 
-         <br> Our objective? To cultivate a robust community in which students support one another in becoming better engineers, leaders, and learners — all while enjoying the journey.</p>
-      </div>
-    </div>
-  </section>
-
-
-  
-  <section id="cards" class="py-10 px-6  bg-cover bg-center"  >
-    <div class="max-w-6xl mx-auto">
-      <h3 class="text-3xl font-bold text-center text-[#563b1e] mb-10">Explore IUCEE</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-[#f4ece0] rounded-lg shadow-md p-6 cursor-pointer transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-            <h4 class="text-xl font-semibold text-[#3d0106] mb-2">About Us</h4>
-            <p class="text-sm text-[#5c5957]">Learn what the IUCEE Club at KLE Tech is all about and how we grow together.</p>
-            <div class="flex justify-center mt-3">
-              <a href="about.html" target="_blank" class="px-4 py-2 bg-[#5c5957] text-white rounded hover:bg-[#3d0106]">
-                View More
-              </a>
-            </div>
-          </div>
-          
-        <!-- Card 1 -->
-        <div class="bg-[#f4ece0] rounded-lg shadow-md p-6 cursor-pointer transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-            <h4 class="text-xl font-semibold text-[#3d0106] mb-2">Mentorship</h4>
-            <p class="text-sm text-[#5c5957]">Connect with experienced peers and mentors to guide your learning journey.</p>
-            <div class="flex justify-center mt-3">
-              <a href="mentor.html" target="_blank" class="px-4 py-2 bg-[#5c5957] text-white rounded hover:bg-[#3d0106]">
-                View More
-              </a>
-            </div>
-          </div>
-          
-  
-        <!-- Card 2 -->
-        <div class="bg-[#f4ece0] rounded-lg shadow-md p-6 cursor-pointer transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-            <h4 class="text-xl font-semibold text-[#3d0106] mb-2">Volunteers</h4>
-            <p class="text-sm text-[#5c5957]">Meet the students who keep the club running with passion and teamwork.</p>
-            <div class="flex justify-center mt-3">
-              <a href="vol.html" target="_blank" class="px-4 py-2 bg-[#5c5957] text-white rounded hover:bg-[#3d0106]">
-                View More
-              </a>
-            </div>
-          </div>
-          
-        <!-- Card 3 -->
-        <div class="bg-[#f4ece0] rounded-lg shadow-md p-6 cursor-pointer transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-            <h4 class="text-xl font-semibold text-[#3d0106] mb-2">IASF 2025</h4>
-            <p class="text-sm text-[#5c5957]">We represented KLE Tech at IASF 2025 in Hyderabad, learning and sharing ideas.</p>
-            <div class="flex justify-center mt-3">
-              <a href="iasf25.html" target="_blank" class="px-4 py-2 bg-[#5c5957] text-white rounded hover:bg-[#3d0106]">
-                View More
-              </a>
-            </div>
-          </div>
-          
-        <!-- Card 4 -->
-        <div class="bg-[#f4ece0] rounded-lg shadow-md p-6 cursor-pointer transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-            <h4 class="text-xl font-semibold text-[#3d0106] mb-2">Community Reachout</h4>
-            <p class="text-sm text-[#5c5957]">See how we give back through projects that serve and inspire.</p>
-            <div class="flex justify-center mt-3">
-              <a href="com.html" target="_blank" class="px-4 py-2 bg-[#5c5957] text-white rounded hover:bg-[#3d0106]">
-                View More
-              </a>
-            </div>
-          </div>
-          
-  
-        <!-- Card 5 -->
-    
-  
-        <!-- Card 6 -->
-        <div class="bg-[#f4ece0] rounded-lg shadow-md p-6 cursor-pointer transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-            <h4 class="text-xl font-semibold text-[#3d0106] mb-2">Register</h4>
-            <p class="text-sm text-[#5c5957]">Join the IUCEE Club and be part of something meaningful at KLE Tech.</p>
-            <div class="flex justify-center mt-3">
-              <a href="reg.html" target="_blank" class="px-4 py-2 bg-[#5c5957] text-white rounded hover:bg-[#3d0106]">
-                Register
-              </a>
-            </div>
-          </div>
-          
-  
-      </div>
-    </div>
-  </section>
-</div>
-  
-
-  <!-- Footer -->
- <!-- Footer -->
-<footer class="bg-[#563b1e] text-[#f1efe6] px-6  mt-10">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
-
-    <!-- Contact Us -->
-    <div>
-      <h1 class="text-xl font-bold mb-4">Contact Us</h1>
-      <div class="py-5">
-<h2 >President : Venkatesh Kanago</h2>
-    </div>
-<h2>Vice President : Arudha Goudar</h2>
-
-<div class="py-5">
-  <h2 >Student Ambassador : Manushri K</h2>
-        <p>Email: iuclubb@gmail.com</p>
-        <p>Phone: +91 num</p>
-      </div>
-    </div>
-
-    <!-- Location -->
-   <!-- Location -->
-<div>
-  <h2 class="text-xl font-bold mb-4">Location</h2>
-  <p>KLE Technological University</p>
-  <p>Hubballi, Karnataka - 580031</p>
-
-  <a 
-    href="https://maps.app.goo.gl/hyX1S1sKHKa4kPjx6" 
-    target="_blank" 
-    class="text-yellow-300 hover:underline mt-2 inline-block"
-  >
-    View on Map
-  </a>
+<div class="flex items-center gap-5">
+<img src="images/logo.png" class="h-12">
+<img src="images/iu.png" class="h-12">
 </div>
 
+<nav class="hidden md:flex gap-8 font-medium">
+<a href="index.html" class="nav-link">Home</a>
+<a href="about.html" class="nav-link">About</a>
+<a href="mentor.html" class="nav-link">Mentorship</a>
+<a href="vol.html" class="nav-link">Team</a>
+<a href="iasf25.html" class="nav-link">IASF 2025</a>
+<a href="iasf2026.html" class="nav-link">IASF 2026</a>
+<a href="com.html" class="nav-link">Community</a>
+</nav>
 
-    <!-- Follow Us -->
-    <div>
-      <h2 class="text-xl font-bold mb-4">Follow Us</h2>
-      <div class="flex justify-center md:justify-start gap-4">
-        <a href="https://www.instagram.com/kletechiuceechapter?igsh=MXJjZXB3a3poNnB5eA==" class="hover:text-yellow-400" target="_blank">
-         <img src="images/instagram (4).png" class="w-[30px]">
-        </a>
-        <a href="https://www.linkedin.com/company/iucee-kletu/" class="hover:text-yellow-400" target="_blank">
-         <img src="images/linkedin (2).png" class="w-[30px]">
-        </a>
-      </div>
-    </div>
+<a href="reg.html" class="join-btn px-6 py-3 rounded-full">Join Us</a>
 
-  </div>
-  <p class="text-center text-sm mt-10">&copy; 2025 KLETECH IUCEE Club. All rights reserved.</p>
-</footer>
+</div>
+</header>
 
+<section class="hero">
 
-  <!-- Animations -->
-  <script>
-    const fadeInObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('opacity-100', 'translate-x-0');
-        }
-      });
-    }, { threshold: 0.1 });
+<img src="images/g2.jpg" id="carouselImage">
 
-    document.querySelectorAll('.animate-fade-in-left').forEach(el => {
-      el.classList.add('opacity-0', '-translate-x-10', 'transition-all', 'duration-1000');
-      fadeInObserver.observe(el);
-    });
+<div class="hero-content max-w-6xl mx-auto px-8 text-white">
 
-    document.querySelectorAll('.animate-fade-in-right').forEach(el => {
-      el.classList.add('opacity-0', 'translate-x-10', 'transition-all', 'duration-1000');
-      fadeInObserver.observe(el);
-    });
-  </script>
-<!-- Toggle script -->
+<p class="uppercase tracking-[7px] text-blue-300 mb-4">
+AN IUCEE STUDENT CHAPTER
+</p>
+
+<h1 id="carouselHeading" class="text-6xl md:text-7xl font-extrabold leading-tight mb-6">
+Innovation &<br>Sustainability Forum
+</h1>
+
+<p id="carouselText" class="text-xl max-w-2xl leading-8">
+Empowering students through innovation, leadership, mentorship and sustainable engineering.
+</p>
+
+<div class="flex gap-5 mt-10">
+<a href="reg.html" class="join-btn px-8 py-4 rounded-full">Join Community</a>
+<a href="about.html" class="border border-white px-8 py-4 rounded-full hover:bg-white hover:text-slate-900 transition">Explore</a>
+</div>
+
+</div>
+
+</section>
+
 <script>
-  const toggleBtn = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('nav-links');
+const navbar=document.getElementById("navbar");
+window.addEventListener("scroll",()=>{window.scrollY>60?navbar.classList.add("scrolled"):navbar.classList.remove("scrolled");});
+</script>
 
-  toggleBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('hidden');
-  });
-</script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
 </body>
 </html>

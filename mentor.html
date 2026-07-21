@@ -7,125 +7,619 @@
  
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#78816c] text-gray-800 ">
+<body class="bg-[#071322] text-gray-800 ">
 
   <!-- Navbar -->
-  <nav class="bg-[#78816c] shadow-md px-6 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <!-- Logo -->
-        <img src="images/logo.png" style="width: 200px;">
-        <img src="images/iu.png" class="md:ml-[-200px] sm:ml-[-100px] sm:w-[20px]" style="width: 130px;">
-  
-      <!-- Hamburger (mobile) -->
-      <button id="menu-toggle" class="md:hidden text-[#f1efe6] focus:outline-none text-3xl">
-        ☰
-      </button>
-  
-      <!-- Nav Links -->
-      <ul id="nav-links" class="hidden md:flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 text-md font-medium absolute md:static top-16 left-0 w-full md:w-auto bg-[#78816c] md:bg-transparent px-6 py-4 md:py-0">
-        <li><a href="index.html" class="font-bold text-white hover:text-[#0A2703]">Home</a></li>
-        <li><a href="about.html" class="font-bold text-white hover:text-[#0A2703]">About</a></li>
-        <li><a href="mentor.html" class="font-bold text-white hover:text-[#0A2703]">Mentorship</a></li>
-        <li><a href="vol.html" class="font-bold text-white hover:text-[#0A2703]">Team</a></li>
-        <li><a href="iasf25.html" class="font-bold text-white hover:text-[#0A2703]">IASF 2025</a></li>
-        <li><a href="com.html" class="font-bold text-white hover:text-[#0A2703]">Community Reachout</a></li>
-        <li><a href="reg.html" target="_blank" class="font-bold text-white hover:text-[#0A2703]">Register</a></li>
-      </ul>
-    </div>
-  </nav>
-  <!-- Mentorship Section -->
-   <div class="bg-cover bg-center min-h-screen" style="background-image: url('https://i.pinimg.com/736x/3d/90/66/3d9066206198d8bad8a79f19e21d0636.jpg');">
-  <section class="pt-16 pb-16 px-6 ">
-    <div class=" text-center mb-10">
-      <h2 class="text-4xl font-bold text-[#1f5113] mb-4">Our Mentorship Program</h2>
-      <p class="text-lg text-gray-700">Guiding students through expert mentorship and growth-driven experiences.</p>
-    </div>
+  <header id="navbar">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
 
-    <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
-      <!-- Card 1 -->
-      <div class="bg-[#78816c] rounded-xl shadow-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-xl">
-        <h3 class="text-xl font-bold text-[#edf1e8] mb-2">1-on-1 Mentorship</h3>
-        <p class="text-[#fbfcf6]">Personalized guidance from industry experts to help students navigate career paths and projects.</p>
-      </div>
+<div class="flex items-center gap-5">
+<img src="images/logo.png" class="h-12">
+<img src="images/iu.png" class="h-12">
+</div>
 
-      <!-- Card 2 -->
-      <div class="bg-[#78816c] rounded-xl shadow-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-xl">
-        <h3 class="text-xl font-bold text-[#edf1e8] mb-2">Monthly Check-ins</h3>
-        <p class="text-[#fbfcf6]">Regular mentorship check-ins to track progress, solve doubts, and stay on course.</p>
-      </div>
+<nav class="hidden md:flex gap-8 font-medium">
+<a href="index.html" class="nav-link">Home</a>
+<a href="about.html" class="nav-link">About</a>
+<a href="mentor.html" class="nav-link">Mentorship</a>
+<a href="vol.html" class="nav-link">Team</a>
+<a href="iasf25.html" class="nav-link">IASF 2025</a>
+<a href="iasf2026.html" class="nav-link">IASF 2026</a>
+<a href="com.html" class="nav-link">Community</a>
+<style>
+  #navbar{
+position:fixed;
+top:18px;
+left:50%;
+transform:translateX(-50%);
+width:95%;
+max-width:1280px;
+z-index:1000;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(22px);
+-webkit-backdrop-filter:blur(22px);
+border:1px solid rgba(255,255,255,.22);
+border-radius:22px;
+box-shadow:0 10px 35px rgba(0,0,0,.12);
+transition:.35s;
+}
 
-      <!-- Card 3 -->
-      <div class="bg-[#78816c] rounded-xl shadow-lg p-6 transform transition duration-300 hover:scale-105 hover:shadow-xl">
-        <h3 class="text-xl font-bold text-[#edf1e8] mb-2">Group Workshops</h3>
-        <p class="text-[#fbfcf6]">Interactive sessions focused on building soft skills, tech skills, and peer learning.</p>
-      </div>
-    </div>
-    
-  </section>
-  <footer class="bg-[#78816c] text-[#f1efe6] px-6  mt-20">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
-  
-      <!-- Contact Us -->
-      <div>
-        <h1 class="text-xl font-bold mb-4 mt-10">Contact Us</h1>
-        <div class="py-5">
-  <h2 >President : Ramyasree Pulakunta</h2>
-        <p>Email: iuclubb@gmail.com</p>
-        <p>Phone: +91 num</p>
-      </div>
-  <h2>Vice President : Varsha Sangolli</h2>
-  <p>Email: iuclubb@gmail.com</p>
-  <p>Phone: +91 num</p>
-  <div class="py-5">
-    <h2 >Student Ambassador : Venkatesh K</h2>
-          <p>Email: iuclubb@gmail.com</p>
-          <p>Phone: +91 num</p>
-        </div>
-      </div>
-  
-      <!-- Location -->
-     <!-- Location -->
-  <div>
-    <h2 class="text-xl font-bold mb-4 mt-10">Location</h2>
-    <p>KLE Technological University</p>
-    <p>Hubballi, Karnataka - 580031</p>
-  
-    <a 
-      href="https://maps.app.goo.gl/hyX1S1sKHKa4kPjx6" 
-      target="_blank" 
-      class="text-yellow-300 hover:underline mt-2 inline-block"
-    >
-      View on Map
-    </a>
-  </div>
-  
-  
-      <!-- Follow Us -->
-      <div>
-        <h2 class="text-xl font-bold mb-4">Follow Us</h2>
-        <div class="flex justify-center md:justify-start gap-4">
-          <a href="https://www.instagram.com/kletechiuceechapter?igsh=MXJjZXB3a3poNnB5eA==" class="hover:text-yellow-400" target="_blank">
-           <img src="images/instagram (4).png" class="w-[30px]">
-          </a>
-          <a href="https://www.linkedin.com/company/iucee-kletu/" class="hover:text-yellow-400" target="_blank">
-           <img src="images/linkedin (2).png" class="w-[30px]">
-          </a>
-        </div>
-      </div>
-  
-    </div>
-    <p class="text-center text-sm mt-10">&copy; 2025 IUCEE Club. All rights reserved.</p>
-  </footer>
+#navbar.scrolled{
+background:rgba(255,255,255,.82);
+backdrop-filter:blur(28px);
+-webkit-backdrop-filter:blur(28px);
+}
+
+.nav-link{
+color:#fff;
+transition:.3s;
+}
+
+#navbar.scrolled .nav-link{
+color:#1e293b;
+}
+
+.nav-link:hover{
+color:#9BE200;
+transform:translateY(-2px);
+}
+
+.join-btn{
+background:#2563eb;
+color:#fff;
+font-weight:600;
+transition:.3s;
+}
+
+.join-btn:hover{
+background:#1d4ed8;
+}
+</style>
+<script>
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 60) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});
+</script>
+</nav>
+
+<a href="reg.html" class="join-btn px-6 py-3 rounded-full">
+Join Us
+</a>
 
 </div>
-<!-- Toggle script -->
-<script>
-  const toggleBtn = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('nav-links');
+</header>
+  <!-- ================= HERO ================= -->
+<div class="bg-[#071322]">
 
-  toggleBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('hidden');
-  });
-</script>
-</body>
-</html>
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+
+    <!-- Background -->
+    <div class="absolute inset-0">
+        <img src="images/mentor-bg.jpg"
+             class="w-full h-full object-cover"
+             alt="Mentorship">
+
+        <div class="absolute inset-0 bg-black/70"></div>
+    </div>
+
+    <!-- Floating Blobs -->
+    <div class="absolute top-20 left-16 w-72 h-72 rounded-full bg-lime-400/10 blur-3xl animate-pulse"></div>
+
+    <div class="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-cyan-400/10 blur-3xl animate-pulse"></div>
+
+    <!-- Hero -->
+    <div class="relative z-10 max-w-6xl mx-auto px-8">
+
+        <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-12">
+
+            <span class="px-5 py-2 rounded-full bg-lime-400 text-black font-bold">
+                IUCEE Student Chapter
+            </span>
+
+            <h1 class="text-6xl font-black text-white mt-6">
+                Mentorship that
+                <span class="text-lime-400">
+                    Inspires Innovation
+                </span>
+            </h1>
+
+            <p class="text-gray-300 text-xl mt-6 leading-9">
+
+                Our mentorship program empowers students through
+                faculty guidance, senior mentorship, alumni support,
+                and industry interaction. We help students build
+                technical expertise, leadership qualities, and
+                innovative thinking beyond the classroom.
+
+            </p>
+
+            <div class="mt-10 flex gap-5">
+
+                <a href="#about"
+
+                   class="px-8 py-4 rounded-full bg-lime-400 text-black font-bold hover:scale-105 transition">
+
+                    Learn More
+
+                </a>
+
+                <a href="reg.html"
+
+                   class="px-8 py-4 rounded-full border border-white text-white hover:bg-white/10 transition">
+
+                    Join Program
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="py-24">
+
+<div class="max-w-7xl mx-auto px-8">
+
+<div class="text-center mb-16">
+
+<h2 class="text-5xl font-bold text-white">
+
+About the Mentorship Program
+
+</h2>
+
+<p class="text-gray-400 mt-6 text-lg max-w-3xl mx-auto">
+
+The IUCEE Student Chapter Mentorship Program bridges the gap between classroom learning and real-world experience. Students receive guidance from faculty members, senior students, alumni, and industry professionals to grow academically, professionally, and personally.
+
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:scale-105 transition">
+
+<h3 class="text-2xl font-bold text-lime-400">
+
+Faculty Guidance
+
+</h3>
+
+<p class="text-gray-300 mt-4">
+
+Work closely with experienced faculty mentors who guide your academic journey, research interests, and technical development.
+
+</p>
+
+</div>
+
+<div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:scale-105 transition">
+
+<h3 class="text-2xl font-bold text-lime-400">
+
+Peer Learning
+
+</h3>
+
+<p class="text-gray-300 mt-4">
+
+Learn collaboratively with senior students through project discussions, technical sessions, and shared experiences.
+
+</p>
+
+</div>
+
+<div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:scale-105 transition">
+
+<h3 class="text-2xl font-bold text-lime-400">
+
+Industry Exposure
+
+</h3>
+
+<p class="text-gray-300 mt-4">
+
+Interact with alumni and professionals who provide valuable insights into careers, innovation, entrepreneurship, and higher studies.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= MENTORSHIP JOURNEY ================= -->
+
+<section class="py-24">
+
+    <div class="max-w-7xl mx-auto px-8">
+
+        <div class="text-center mb-20">
+
+            <h2 class="text-5xl font-bold text-white">
+                Your Mentorship Journey
+            </h2>
+
+            <p class="text-gray-400 mt-6 max-w-3xl mx-auto text-lg">
+                Every student follows a structured learning path designed to
+                transform curiosity into confidence and ideas into impactful
+                achievements.
+            </p>
+
+        </div>
+
+        <div class="grid md:grid-cols-5 gap-8">
+
+            <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 text-center hover:scale-105 transition">
+
+                <div class="text-5xl mb-5">🚀</div>
+
+                <h3 class="text-xl font-bold text-lime-400">
+                    Discover
+                </h3>
+
+                <p class="text-gray-300 mt-4">
+                    Explore opportunities, interests and future career paths.
+                </p>
+
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 text-center hover:scale-105 transition">
+
+                <div class="text-5xl mb-5">🤝</div>
+
+                <h3 class="text-xl font-bold text-lime-400">
+                    Connect
+                </h3>
+
+                <p class="text-gray-300 mt-4">
+                    Get paired with mentors from faculty, seniors and alumni.
+                </p>
+
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 text-center hover:scale-105 transition">
+
+                <div class="text-5xl mb-5">💡</div>
+
+                <h3 class="text-xl font-bold text-lime-400">
+                    Learn
+                </h3>
+
+                <p class="text-gray-300 mt-4">
+                    Gain practical knowledge through discussions, projects and
+                    technical sessions.
+                </p>
+
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 text-center hover:scale-105 transition">
+
+                <div class="text-5xl mb-5">🛠️</div>
+
+                <h3 class="text-xl font-bold text-lime-400">
+                    Build
+                </h3>
+
+                <p class="text-gray-300 mt-4">
+                    Apply your learning by creating projects, research and
+                    innovative solutions.
+                </p>
+
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 text-center hover:scale-105 transition">
+
+                <div class="text-5xl mb-5">🌟</div>
+
+                <h3 class="text-xl font-bold text-lime-400">
+                    Lead
+                </h3>
+
+                <p class="text-gray-300 mt-4">
+                    Become a mentor yourself and inspire the next generation of
+                    innovators.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= MENTORSHIP ECOSYSTEM ================= -->
+
+<section class="py-24 bg-[#0b1d2d]">
+
+    <div class="max-w-7xl mx-auto px-8">
+
+        <div class="text-center mb-16">
+
+            <h2 class="text-5xl font-bold text-white">
+                Mentorship Ecosystem
+            </h2>
+
+            <p class="text-gray-400 mt-6 text-lg max-w-3xl mx-auto">
+                A collaborative network connecting students with experienced
+                mentors and opportunities for continuous growth.
+            </p>
+
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 items-center">
+
+            <!-- Left -->
+
+            <div class="space-y-8">
+
+                <div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-6 text-center">
+
+                    <h3 class="text-xl text-lime-400 font-bold">
+                        Faculty Mentors
+                    </h3>
+
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-6 text-center">
+
+                    <h3 class="text-xl text-lime-400 font-bold">
+                        Senior Students
+                    </h3>
+
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-6 text-center">
+
+                    <h3 class="text-xl text-lime-400 font-bold">
+                        Alumni
+                    </h3>
+
+                </div>
+
+            </div>
+
+            <!-- Center -->
+
+            <div class="flex justify-center">
+
+                <div class="w-72 h-72 rounded-full bg-lime-400 flex flex-col justify-center items-center shadow-[0_0_60px_rgba(155,226,0,0.4)]">
+
+                    <h2 class="text-3xl font-black text-black">
+                        IUCEE
+                    </h2>
+
+                    <p class="font-semibold text-black mt-2">
+                        Mentorship Program
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="space-y-8">
+
+                <div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-6 text-center">
+
+                    <h3 class="text-xl text-lime-400 font-bold">
+                        Industry Experts
+                    </h3>
+
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-6 text-center">
+
+                    <h3 class="text-xl text-lime-400 font-bold">
+                        Research
+                    </h3>
+
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-6 text-center">
+
+                    <h3 class="text-xl text-lime-400 font-bold">
+                        Leadership
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= SKILLS ================= -->
+
+<section class="py-24">
+
+    <div class="max-w-7xl mx-auto px-8">
+
+        <div class="text-center mb-16">
+
+            <h2 class="text-5xl font-bold text-white">
+                Skills You'll Develop
+            </h2>
+
+            <p class="text-gray-400 mt-6 max-w-3xl mx-auto text-lg">
+                Our mentorship program focuses on developing well-rounded
+                individuals equipped with technical knowledge, leadership
+                abilities, and a mindset for continuous innovation.
+            </p>
+
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:-translate-y-2 transition duration-300">
+
+                <div class="text-5xl mb-5">💻</div>
+
+                <h3 class="text-2xl font-bold text-lime-400">
+                    Technical Skills
+                </h3>
+
+                <p class="text-gray-300 mt-4 leading-8">
+                    Strengthen your programming, problem-solving, research,
+                    and engineering skills through hands-on guidance.
+                </p>
+
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:-translate-y-2 transition duration-300">
+
+                <div class="text-5xl mb-5">🧠</div>
+
+                <h3 class="text-2xl font-bold text-lime-400">
+                    Critical Thinking
+                </h3>
+
+                <p class="text-gray-300 mt-4 leading-8">
+                    Learn analytical thinking, innovation, and decision-making
+                    through real-world challenges and collaborative learning.
+                </p>
+
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 hover:-translate-y-2 transition duration-300">
+
+                <div class="text-5xl mb-5">👥</div>
+
+                <h3 class="text-2xl font-bold text-lime-400">
+                    Leadership
+                </h3>
+
+                <p class="text-gray-300 mt-4 leading-8">
+                    Build confidence, communication, teamwork, and leadership
+                    qualities essential for academic and professional success.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= WHY JOIN ================= -->
+
+<section class="py-24 bg-[#0b1d2d]">
+
+    <div class="max-w-7xl mx-auto px-8">
+
+        <div class="text-center mb-16">
+
+            <h2 class="text-5xl font-bold text-white">
+                Why Join the Mentorship Program?
+            </h2>
+
+            <p class="text-gray-400 mt-6 max-w-3xl mx-auto text-lg">
+                Join a vibrant community where learning extends beyond the
+                classroom and every interaction contributes to your growth.
+            </p>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 text-center hover:scale-105 transition">
+
+                <div class="text-5xl mb-4">🎓</div>
+
+                <h3 class="text-xl font-bold text-lime-400">
+                    Expert Guidance
+                </h3>
+
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 text-center hover:scale-105 transition">
+
+                <div class="text-5xl mb-4">🌐</div>
+
+                <h3 class="text-xl font-bold text-lime-400">
+                    Strong Network
+                </h3>
+
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 text-center hover:scale-105 transition">
+
+                <div class="text-5xl mb-4">🚀</div>
+
+                <h3 class="text-xl font-bold text-lime-400">
+                    Career Growth
+                </h3>
+
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 text-center hover:scale-105 transition">
+
+                <div class="text-5xl mb-4">💡</div>
+
+                <h3 class="text-xl font-bold text-lime-400">
+                    Innovation Culture
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CALL TO ACTION ================= -->
+
+<section class="py-24">
+
+    <div class="max-w-5xl mx-auto px-8">
+
+        <div class="bg-gradient-to-r from-lime-400 to-green-500 rounded-3xl p-12 text-center shadow-2xl">
+
+            <h2 class="text-5xl font-black text-black mb-6">
+
+                Ready to Begin Your Journey?
+
+            </h2>
+
+            <p class="text-black text-lg leading-8 max-w-3xl mx-auto mb-10">
+
+                Become a part of the IUCEE Student Chapter Mentorship Program
+                and gain access to faculty mentors, senior students, alumni,
+                and industry professionals who will help shape your future.
+
+            </p>
+
+            <a href="reg.html"
+               class="inline-block px-10 py-4 bg-black text-white rounded-full font-bold hover:scale-105 transition duration-300">
+
+                Register Now
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</div>

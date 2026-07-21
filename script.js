@@ -1,36 +1,74 @@
-const bannerSection = document.querySelector('#home');
-const overlayHeading = bannerSection.querySelector('h2');
-const overlayText = bannerSection.querySelector('p');
-
 const slides = [
   {
-    image:"",
-    heading: 'Welcome to IUCEE Club',
-    text: 'Empowering students through innovation, mentorship, and global collaboration.'
+    image: "images/g2.jpg",
+    heading: "Innovation & Sustainability Forum",
+    text: "Empowering students through innovation, leadership, mentorship and sustainable engineering."
   },
   {
-    image: 'images/pic2.jpg',
-    heading: 'Connecting Students Globally',
-    text: 'Fostering a network of learners and leaders across the world.'
+    image: "images/pic2.jpg",
+    heading: "Connecting Future Engineers",
+    text: "Building a collaborative ecosystem for learning, research and impact."
   },
   {
-    image: 'images/pic3.jpg',
-    heading: 'Learn. Lead. Inspire.',
-    text: 'Building the engineers of tomorrow, today.'
+    image: "images/pic3.jpg",
+    heading: "Learn. Lead. Inspire.",
+    text: "Creating opportunities beyond classrooms through projects, workshops and community outreach."
   }
 ];
 
 let current = 0;
 
-function updateBanner() {
-  const slide = slides[current];
-  bannerSection.style.backgroundImage = `url('${slide.image}')`;
-  overlayHeading.textContent = slide.heading;
-  overlayText.textContent = slide.text;
+const image = document.getElementById("carouselImage");
+const heading = document.getElementById("carouselHeading");
+const text = document.getElementById("carouselText");
 
-  current = (current + 1) % slides.length;
+function changeSlide() {
+
+    current = (current + 1) % slides.length;
+
+    image.style.opacity = "0";
+
+    setTimeout(() => {
+
+        image.src = slides[current].image;
+        heading.innerHTML = slides[current].heading;
+        text.innerHTML = slides[current].text;
+
+        image.style.opacity = "1";
+
+    }, 400);
 }
 
-// Start the slideshow
-updateBanner(); // Initial
-setInterval(updateBanner, 4000); // Change every 4 seconds
+image.style.transition = "opacity .4s ease";
+
+setInterval(changeSlide, 5000);
+
+// ----------------------
+// Glass Navbar
+// ----------------------
+
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 60) {
+
+        navbar.classList.add("navbar-scrolled");
+
+        navLinks.forEach(link => {
+            link.classList.remove("text-white");
+            link.classList.add("text-slate-700");
+        });
+
+    } else {
+
+        navbar.classList.remove("navbar-scrolled");
+
+        navLinks.forEach(link => {
+            link.classList.remove("text-slate-700");
+            link.classList.add("text-white");
+        });
+
+    }
+
+});

@@ -1,191 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Volunteers | IUCEE Club</title>
-
-  <!-- Tailwind CDN with custom colors -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brown: '#563b1e',
-            beige: '#f1efe6'
-          }
-        }
-      }
-    }
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Team | IASF</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body{margin:0;background:#08111f;font-family:Arial,sans-serif}
+#navbar{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:95%;max-width:1280px;background:rgba(255,255,255,.14);backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.2);border-radius:22px;z-index:999}
+.nav a{color:#fff;text-decoration:none;font-weight:600}
+.hero{height:60vh;background:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80') center/cover;position:relative;display:flex;align-items:center;justify-content:center}
+.hero:before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(8,17,31,.75),rgba(8,17,31,.45));backdrop-filter:blur(3px)}
+.glass{background:rgba(255,255,255,.08);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.18);border-radius:24px;transition:.35s}
+.glass:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 20px 40px rgba(0,0,0,.35);border-color:#9BE200}
+</style>
 </head>
-
-<body class="bg-[#efe9e9] text-gray-800">
-
-  <nav class="bg-[#efe9e9] shadow-md px-6  sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <!-- Logo -->
-        <img src="images/logo.png" style="width: 200px;">
-        <img src="images/iu.png" class="md:ml-[-200px] sm:ml-[-100px] sm:w-[20px]" style="width: 130px;">
-  
-      <!-- Hamburger (mobile) -->
-      <button id="menu-toggle" class="md:hidden text-[#ae4a5e] focus:outline-none text-3xl">
-        ☰
-      </button>
-  
-      <!-- Nav Links -->
-      <ul id="nav-links" class="hidden md:flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 text-md font-medium absolute md:static top-16 left-0 w-full md:w-auto bg-[#efe9e9] md:bg-transparent px-6 py-4 md:py-0">
-        <li><a href="index.html" class="font-bold text-[#ae4a5e] hover:text-[#E50B75]">Home</a></li>
-        <li><a href="about.html" class="font-bold text-[#ae4a5e] hover:text-[#E50B75]">About</a></li>
-        <li><a href="mentor.html" class="font-bold text-[#ae4a5e] hover:text-[#E50B75]">Mentorship</a></li>
-        <li><a href="vol.html" class="font-bold text-[#ae4a5e] hover:text-[#E50B75]">Team</a></li>
-        <li><a href="iasf25.html" class="font-bold text-[#ae4a5e] hover:text-[#E50B75]">IASF 2025</a></li>
-        <li><a href="com.html" class="font-bold text-[#ae4a5e] hover:text-[#E50B75]">Community Reachout</a></li>
-        <li><a href="reg.html" target="_blank" class="font-bold text-[#ae4a5e] hover:text-[#E50B75]">Register</a></li>
-      </ul>
+<body>
+<header id="navbar">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
+    <div class="flex items-center gap-4">
+      <img src="images/logo.png" class="h-12">
+      <img src="images/iu.png" class="h-10">
     </div>
-  </nav>
-  <!-- Main Volunteer Section -->
-  <div class="min-h-screen bg-cover" style="background-image: url('https://i.pinimg.com/736x/78/98/4f/78984f6d0758c6a8458791c370fa76b7.jpg');">
- 
-  
-  <section class="pt-16 pb-16 px-6 ">
-    <div class="text-center max-w-4xl mx-auto mb-10">
-      <h2 class="text-4xl font-bold text-[#fdfbfb] mb-4">Meet Our Volunteers</h2>
-      <p class="text-lg text-gray-700">The faces behind our initiatives and events — dedicated, passionate, and driven by impact.</p>
-    </div>
-
-    <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
-      <!-- Volunteer Card -->
-      <div class="bg-[#f4e2e9] rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <img src="images/ramya.jpg" alt="Volunteer Photo" class="mx-auto  w-[230px] h-[230px] object-cover rounded-full mb-4">
-        <h3 class="text-xl font-bold text-brown">Ramyasree Pulakunta</h3>
-        <p class="text-sm text-gray-600">President | Biotech</p>
-      </div>
-      <div class="bg-[#f4e2e9] rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <img src="images/varsha.jpg" alt="Volunteer Photo" class="mx-auto w-[230px] h-[230px] object-cover rounded-full mb-4">
-        <h3 class="text-xl font-bold text-brown">Varsha Sangolli</h3>
-        <p class="text-sm text-gray-600">Vice-President | CSE</p>
-      </div>
-     
-      <div class="bg-[#f4e2e9] rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <img src="images/venky.png" alt="Volunteer Photo" class="mx-auto w-[230px] h-[230px] object-cover rounded-full mb-4">
-        <h3 class="text-xl font-bold text-brown">Venkatesh K </h3>
-        <p class="text-sm text-gray-600">Student Ambassador | VLSI</p>
-      </div>
-      <div class="bg-[#f4e2e9] rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <img src="images/abhay.jpeg" alt="Volunteer Photo" class="mx-auto w-[230px] h-[230px] object-cover rounded-full mb-4">
-        <h3 class="text-xl font-bold text-brown">Abhay Shanbhag</h3>
-        <p class="text-sm text-gray-600">Role | Mech</p>
-      </div>
-      <div class="bg-[#f4e2e9] rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <img src="images/neha2.png" alt="Volunteer Photo" class="mx-auto w-[230px] h-[230px] object-cover rounded-full mb-4">
-        <h3 class="text-xl font-bold text-brown">Neha Joshi</h3>
-        <p class="text-sm text-gray-600">Tech | ECE</p>
-      </div>
-      <div class="bg-[#f4e2e9] rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <img src="images/mishti.jpg" alt="Volunteer Photo" class="mx-auto  w-[230px] h-[230px] object-cover rounded-full mb-4">
-        <h3 class="text-xl font-bold text-brown">Mishti Dak</h3>
-        <p class="text-sm text-gray-600">role | CSE</p>
-      </div>
-      <div class="bg-[#f4e2e9] rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <img src="images/sashank.jpg" alt="Volunteer Photo" class="mx-auto w-[230px] h-[230px] object-cover rounded-full mb-4">
-        <h3 class="text-xl font-bold text-brown">Shashank Dollin</h3>
-        <p class="text-sm text-gray-600">Role | ECE</p>
-      </div>
-      <div class="bg-[#f4e2e9] rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <img src="images/pranjwal.JPG" alt="Volunteer Photo" class="mx-auto w-[230px] h-[230px] object-cover rounded-full mb-4">
-        <h3 class="text-xl font-bold text-brown">Pranjwal Hukkeri</h3>
-        <p class="text-sm text-gray-600">Role | ECE</p>
-      </div>
-      <div class="bg-[#f4e2e9] rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <img src="images/saideep.JPG" alt="Volunteer Photo" class="mx-auto w-[230px] h-[230px] object-cover rounded-full mb-4">
-        <h3 class="text-xl font-bold text-brown">Saideep Nayak</h3>
-        <p class="text-sm text-gray-600">Content | CS(AI)</p>
-      </div>
-      <div class="bg-[#f4e2e9] rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <img src="images/rishika.jpg" alt="Volunteer Photo" class="mx-auto w-[230px] h-[230px] object-cover rounded-full mb-4">
-        <h3 class="text-xl font-bold text-brown">Rishika Kadam</h3>
-        <p class="text-sm text-gray-600">Role | Automation and Robotics</p>
-      </div>
-      <div class="bg-[#f4e2e9] rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <img src="images/Pratiksha.jpeg" alt="Volunteer Photo" class="mx-auto w-[230px] h-[230px] object-cover rounded-full mb-4">
-        <h3 class="text-xl font-bold text-brown">Pratiksha</h3>
-        <p class="text-sm text-gray-600">Role | Automation and Robotics</p>
-      </div>
-      <div class="bg-[#f4e2e9] rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <img src="images/Kiran.jpeg" alt="Volunteer Photo" class="mx-auto w-[230px] h-[230px] object-cover rounded-full mb-4">
-        <h3 class="text-xl font-bold text-brown">Kiran C</h3>
-        <p class="text-sm text-gray-600">Role | CS</p>
-      </div>
-      <!-- Duplicate and edit the above card for more volunteers -->
-    </div>
-   
-  </section>
-  <footer class="bg-[#efe9e9] text-[#ae4a5e] px-6  mt-10">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
-  
-      <!-- Contact Us -->
-      <div>
-        <h1 class="text-xl font-bold mb-4 mt-10">Contact Us</h1>
-        <div class="py-5">
-  <h2 >President : Ramyasree Pulakunta</h2>
-        <p>Email: iuclubb@gmail.com</p>
-        <p>Phone: +91 num</p>
-      </div>
-  <h2>Vice President : Varsha Sangolli</h2>
-  <p>Email: iuclubb@gmail.com</p>
-  <p>Phone: +91 num</p>
-  <div class="py-5">
-    <h2 >Student Ambassador : Venkatesh K</h2>
-          <p>Email: iuclubb@gmail.com</p>
-          <p>Phone: +91 num</p>
-        </div>
-      </div>
-  
-      <!-- Location -->
-     <!-- Location -->
-  <div>
-    <h2 class="text-xl font-bold mb-4 md:mt-10">Location</h2>
-    <p>KLE Technological University</p>
-    <p>Hubballi, Karnataka - 580031</p>
-  
-    <a 
-      href="https://maps.app.goo.gl/hyX1S1sKHKa4kPjx6" 
-      target="_blank" 
-      class="text-yellow-300 hover:underline mt-2 inline-block"
-    >
-      View on Map
-    </a>
+    <nav class="nav hidden md:flex gap-8">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="mentor.html">Mentorship</a>
+      <a href="vol.html">Team</a>
+      <a href="iasf25.html">IASF25</a>
+      <a href="iasf2026.html">IASF26</a>
+      <a href="com.html">Community Reachout</a>
+      <a href="reg.html">Register</a>
+    </nav>
   </div>
-  
-  
-      <!-- Follow Us -->
-      <div>
-        <h2 class="text-xl font-bold mb-4">Follow Us</h2>
-        <div class="flex justify-center md:justify-start gap-4">
-          <a href="https://www.instagram.com/kletechiuceechapter?igsh=MXJjZXB3a3poNnB5eA==" class="hover:text-yellow-400" target="_blank">
-           <img src="images/instagram (4).png" class="w-[30px]">
-          </a>
-          <a href="https://www.linkedin.com/company/iucee-kletu/" class="hover:text-yellow-400" target="_blank">
-           <img src="images/linkedin (2).png" class="w-[30px]">
-          </a>
-        </div>
-      </div>
-  
-    </div>
-    <p class="text-center text-sm mt-10">&copy; 2025 IUCEE Club. All rights reserved.</p>
-  </footer></div>
- <!-- Toggle script -->
-<script>
-  const toggleBtn = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('nav-links');
+</header>
+<section class="hero">
+  <div style="position:relative;text-align:center;color:white">
+    <h1 style="font-size:60px;font-weight:800">Meet Our Team</h1>
+    <p>The people driving innovation, leadership and sustainability.</p>
+  </div>
+</section>
+<section class="px-6 py-16">
+<h2 class="text-3xl font-bold text-center text-white mt-16 mb-8">Leadership</h2><div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
-  toggleBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('hidden');
-  });
-</script>
+<div class="glass p-6 text-center">
+<img src="images/team/bhavya.png" class="w-44 h-44 rounded-full mx-auto object-cover border-4 border-[#9BE200]">
+<h3 class="text-2xl font-bold mt-5 text-white">Bhavya</h3>
+<span class="inline-block mt-3 px-4 py-1 rounded-full bg-[#9BE200] text-slate-900 font-semibold">President</span>
+</div>
 
-</body>
-</html>
+<div class="glass p-6 text-center">
+<img src="images/team/purvi.jpeg" class="w-44 h-44 rounded-full mx-auto object-cover border-4 border-[#9BE200]">
+<h3 class="text-2xl font-bold mt-5 text-white">Purvi</h3>
+<span class="inline-block mt-3 px-4 py-1 rounded-full bg-[#9BE200] text-slate-900 font-semibold">Vice President</span>
+</div>
+
+<div class="glass p-6 text-center">
+<img src="images/team/piyush.png" class="w-44 h-44 rounded-full mx-auto object-cover border-4 border-[#9BE200]">
+<h3 class="text-2xl font-bold mt-5 text-white">Piyush</h3>
+<span class="inline-block mt-3 px-4 py-1 rounded-full bg-[#9BE200] text-slate-900 font-semibold">Student Ambassador</span>
+</div>
+</div>
+<h2 class="text-3xl font-bold text-center text-white mt-16 mb-8">Media Team</h2><div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+<div class="glass p-6 text-center">
+<img src="images/team/sumanyu.png" class="w-44 h-44 rounded-full mx-auto object-cover border-4 border-[#9BE200]">
+<h3 class="text-2xl font-bold mt-5 text-white">Sumanyu</h3>
+<span class="inline-block mt-3 px-4 py-1 rounded-full bg-[#9BE200] text-slate-900 font-semibold">Media Lead</span>
+</div>
+
+<div class="glass p-6 text-center">
+<img src="images/team/Khushi.jpeg" class="w-44 h-44 rounded-full mx-auto object-cover border-4 border-[#9BE200]">
+<h3 class="text-2xl font-bold mt-5 text-white">Khushi</h3>
+<span class="inline-block mt-3 px-4 py-1 rounded-full bg-[#9BE200] text-slate-900 font-semibold">Media Co-Lead</span>
+</div>
+</div>
+<h2 class="text-3xl font-bold text-center text-white mt-16 mb-8">Public Speaking</h2><div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+<div class="glass p-6 text-center">
+<img src="images/team/manushri.png" class="w-44 h-44 rounded-full mx-auto object-cover border-4 border-[#9BE200]">
+<h3 class="text-2xl font-bold mt-5 text-white">Manushri</h3>
+<span class="inline-block mt-3 px-4 py-1 rounded-full bg-[#9BE200] text-slate-900 font-semibold">Public Speaking Lead</span>
+</div>
+
+<div class="glass p-6 text-center">
+<img src="images/team/shreksha.jpeg" class="w-44 h-44 rounded-full mx-auto object-cover border-4 border-[#9BE200]">
+<h3 class="text-2xl font-bold mt-5 text-white">Shreksha</h3>
+<span class="inline-block mt-3 px-4 py-1 rounded-full bg-[#9BE200] text-slate-900 font-semibold">Public Speaking Co-Lead</span>
+</div>
+</div>
+<h2 class="text-3xl font-bold text-center text-white mt-16 mb-8">Literature</h2><div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+<div class="glass p-6 text-center">
+<img src="images/team/anandita.png" class="w-44 h-44 rounded-full mx-auto object-cover border-4 border-[#9BE200]">
+<h3 class="text-2xl font-bold mt-5 text-white">Anandita</h3>
+<span class="inline-block mt-3 px-4 py-1 rounded-full bg-[#9BE200] text-slate-900 font-semibold">Literature Lead</span>
+</div>
+
+<div class="glass p-6 text-center">
+<img src="images/team/sripriya.png" class="w-44 h-44 rounded-full mx-auto object-cover border-4 border-[#9BE200]">
+<h3 class="text-2xl font-bold mt-5 text-white">Sripriya</h3>
+<span class="inline-block mt-3 px-4 py-1 rounded-full bg-[#9BE200] text-slate-900 font-semibold">Literature Co-Lead</span>
+</div>
+</div>
+<h2 class="text-3xl font-bold text-center text-white mt-16 mb-8">Event Management</h2><div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+<div class="glass p-6 text-center">
+<img src="images/team/vadiraj.png" class="w-44 h-44 rounded-full mx-auto object-cover border-4 border-[#9BE200]">
+<h3 class="text-2xl font-bold mt-5 text-white">Vadiraj</h3>
+<span class="inline-block mt-3 px-4 py-1 rounded-full bg-[#9BE200] text-slate-900 font-semibold">Event Management Lead</span>
+</div>
+
+<div class="glass p-6 text-center">
+<img src="images/team/vageesh.jpeg" class="w-44 h-44 rounded-full mx-auto object-cover border-4 border-[#9BE200]">
+<h3 class="text-2xl font-bold mt-5 text-white">Vageesh</h3>
+<span class="inline-block mt-3 px-4 py-1 rounded-full bg-[#9BE200] text-slate-900 font-semibold">Event Management Co-Lead</span>
+</div>
+</div>
+<h2 class="text-3xl font-bold text-center text-white mt-16 mb-8">Treasury</h2><div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+<div class="glass p-6 text-center">
+<img src="images/team/Aditya.jpeg" class="w-44 h-44 rounded-full mx-auto object-cover border-4 border-[#9BE200]">
+<h3 class="text-2xl font-bold mt-5 text-white">Aditya</h3>
+<span class="inline-block mt-3 px-4 py-1 rounded-full bg-[#9BE200] text-slate-900 font-semibold">Treasurer</span>
+</div>
+
+<div class="glass p-6 text-center">
+<img src="images/team/Vyshanvi.png" class="w-44 h-44 rounded-full mx-auto object-cover border-4 border-[#9BE200]">
+<h3 class="text-2xl font-bold mt-5 text-white">Vyshanvi</h3>
+<span class="inline-block mt-3 px-4 py-1 rounded-full bg-[#9BE200] text-slate-900 font-semibold">Treasurer Co-Lead</span>
+</div>
+
+</div>
+<h2 class="text-3xl font-bold text-center text-white mt-16 mb-8">Ideation</h2><div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+<div class="glass p-6 text-center">
+<img src="images/team/Nikhil.jpeg" class="w-44 h-44 rounded-full mx-auto object-cover border-4 border-[#9BE200]">
+<h3 class="text-2xl font-bold mt-5 text-white">Nikhil</h3>
+<span class="inline-block mt-3 px-4 py-1 rounded-full bg-[#9BE200] text-slate-900 font-semibold">Ideation Lead</span>
+</div>
+
+<div class="glass p-6 text-center">
+<img src="images/team/Shrirang.png" class="w-44 h-44 rounded-full mx-auto object-cover border-4 border-[#9BE200]">
+<h3 class="text-2xl font-bold mt-5 text-white">Shrirang</h3>
+<span class="inline-block mt-3 px-4 py-1 rounded-full bg-[#9BE200] text-slate-900 font-semibold">Ideation Co-Lead</span>
+</div>
+
+
+</div>
+</section>
+<footer class="text-center text-white py-8 border-t border-slate-700">© 2025 IASF | KLE Technological University</footer>
+</body></html>

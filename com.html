@@ -1,197 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Community Reachout</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community Reachout | IUCEE Student Chapter</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{font-family:Inter,sans-serif;background:#071322;color:#fff}
+#navbar{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:95%;max-width:1280px;z-index:1000;background:rgba(255,255,255,.12);backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.22);border-radius:22px;box-shadow:0 10px 35px rgba(0,0,0,.12);transition:.35s}
+#navbar.scrolled{background:rgba(255,255,255,.82)}
+.nav-link{color:#fff;transition:.3s}
+#navbar.scrolled .nav-link{color:#1e293b}
+.nav-link:hover{color:#9BE200}
+.join-btn{background:#2563eb;color:#fff;font-weight:600;transition:.3s}
+.join-btn:hover{background:#1d4ed8}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(7,19,34,.85),rgba(7,19,34,.45))}
+.glass{background:rgba(255,255,255,.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.12)}
+</style>
 </head>
-<body class="bg-[#ba582a] text-gray-800">
+<body>
 
- <!-- Navbar -->
-<nav class="bg-[#ba592a] shadow-md px-6  sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto flex justify-between items-center">
-       <!-- Logo -->
-       <img src="images/logo.png" style="width: 200px;">
-       <img src="images/iu.png" class="md:ml-[-200px] sm:ml-[-100px] sm:w-[20px]" style="width: 130px;">
-
-    <!-- Hamburger (mobile) -->
-    <button id="menu-toggle" class="md:hidden text-[#f1efe6] focus:outline-none text-3xl">
-      ☰
-    </button>
-
-    <!-- Nav Links -->
-    <ul id="nav-links" class="hidden md:flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 text-md font-medium absolute md:static top-16 left-0 w-full md:w-auto bg-[#ba592a] md:bg-transparent px-6 py-4 md:py-0">
-      <li><a href="index.html" class="font-bold text-[#f1efe6] hover:text-yellow-300">Home</a></li>
-      <li><a href="about.html" class="font-bold text-[#f1efe6] hover:text-yellow-300">About</a></li>
-      <li><a href="mentor.html" class="font-bold text-[#f1efe6] hover:text-yellow-300">Mentorship</a></li>
-      <li><a href="vol.html" class="font-bold text-[#f1efe6] hover:text-yellow-300">Team</a></li>
-      <li><a href="iasf25.html" class="font-bold text-[#f1efe6] hover:text-yellow-300">IASF 2025</a></li>
-      <li><a href="com.html" class="font-bold text-[#f1efe6] hover:text-yellow-300">Community Reachout</a></li>
-      <li><a href="reg.html" target="_blank" class="font-bold text-[#f1efe6] hover:text-yellow-300">Register</a></li>
-    </ul>
-  </div>
-</nav>
-  <!-- Hero Section -->
-   <div class="bg-cover" style="background-image: url('https://i.pinimg.com/1200x/53/aa/c1/53aac104c8ba42341fe7617829961bee.jpg');">
-  <section class=" py-16 text-center">
-    <h1 class="text-4xl text-[#f8f5ec] font-bold mb-4">Together, We Grow.</h1>
-    <p class="text-lg max-w-2xl mx-auto">Our community efforts are all about sharing, learning, and uplifting each other. Here's how we're making an impact.</p>
-    <a href="#get-involved" class="inline-block mt-6 px-6 py-2 bg-yellow-500 text-white rounded-full hover:bg-yellow-600 transition">Join Us</a>
-  </section>
-
-  <!-- Ongoing Initiatives -->
-  <section class="py-5 px-6" id="initiatives">
-    <h2 class="text-3xl font-bold text-center text-[#753B08] mb-12">Our Ongoing Initiatives</h2>
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transform transition duration-300">
-        <h3 class="text-xl font-semibold mb-2">Mentorship for Students</h3>
-        <p>Guiding students one-on-one to build confidence and career clarity.</p>
-      </div>
-      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transform transition duration-300">
-        <h3 class="text-xl font-semibold mb-2">Free Webinars</h3>
-        <p>We host sessions on design, development, freelancing, and more.</p>
-      </div>
-      <div class="bg-white rounded-xl shadow-md p-6 hover:scale-105 transform transition duration-300">
-        <h3 class="text-xl font-semibold mb-2">Design Help for NGOs</h3>
-        <p>Supporting small causes by offering design and website help pro bono.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Collaborators -->
-  <section class="pt-10 px-6 ">
-    <h2 class="text-3xl font-bold text-[#753B08] text-center mb-12">People & Partners</h2>
-    <div class="flex flex-wrap justify-center gap-10">
-      <div class="bg-white rounded-lg shadow p-6 w-64 text-center hover:bg-yellow-50 transition">
-        <p class="text-lg font-semibold">CEER</p>
-        <p class="text-sm text-gray-500">Collab on workshops</p>
-      </div>
-      <div class="bg-white rounded-lg shadow p-6 w-64 text-center hover:bg-yellow-50 transition">
-        <p class="text-lg font-semibold">KLE Tech</p>
-        <p class="text-sm text-gray-500">Hosted joint sessions</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Impact -->
-  <section id="stats" class=" py-20 px-6">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-4xl font-bold text-[#753B08] mb-12">Community Reachout Impact</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div class="bg-white shadow-lg rounded-xl p-8 transition-transform duration-300 hover:scale-105">
-          <h3 class="text-5xl font-bold text-[#e2981f] counter" data-target="500">0</h3>
-          <p class="mt-2 text-lg text-[#6b4b30]">People Reached</p>
-        </div>
-        <div class="bg-white shadow-lg rounded-xl p-8 transition-transform duration-300 hover:scale-105">
-          <h3 class="text-5xl font-bold text-[#e2981f] counter" data-target="30">0</h3>
-          <p class="mt-2 text-lg text-[#6b4b30]">Events Hosted</p>
-        </div>
-        <div class="bg-white shadow-lg rounded-xl p-8 transition-transform duration-300 hover:scale-105">
-          <h3 class="text-5xl font-bold text-[#e2981f] counter" data-target="20">0</h3>
-          <p class="mt-2 text-lg text-[#6b4b30]">Volunteers</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  
-
-  <!-- Get Involved -->
-  <section id="get-involved" class=" px-6 pb-10">
-    <h2 class="text-3xl font-bold text-center text-[#753B08] mb-8">Want to Collaborate or Help?</h2>
-    <div class="max-w-xl mx-auto text-center">
-      <p class="mb-6">We're always looking to build with like-minded folks. Drop a message or connect over socials!</p>
-      <a href="mailto:youremail@example.com" class="inline-block bg-yellow-500 text-white px-6 py-2 rounded-full hover:bg-yellow-600 transition">Email Us</a>
-    </div>
-  </section>
-  <footer class="bg-[#ba582a] text-[#f1efe6] px-6  mt-10">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
-  
-      <!-- Contact Us -->
-      <div>
-        <h1 class="text-xl font-bold mb-4 mt-10">Contact Us</h1>
-        <div class="py-5">
-  <h2 >President : Ramyasree Pulakunta</h2>
-        <p>Email: iuclubb@gmail.com</p>
-        <p>Phone: +91 num</p>
-      </div>
-  <h2>Vice President : Varsha Sangolli</h2>
-  <p>Email: iuclubb@gmail.com</p>
-  <p>Phone: +91 num</p>
-  <div class="py-5">
-    <h2 >Student Ambassador : Venkatesh K</h2>
-          <p>Email: iuclubb@gmail.com</p>
-          <p>Phone: +91 num</p>
-        </div>
-      </div>
-  
-      <!-- Location -->
-     <!-- Location -->
-  <div>
-    <h2 class="text-xl font-bold mb-4 md:mt-10">Location</h2>
-    <p>KLE Technological University</p>
-    <p>Hubballi, Karnataka - 580031</p>
-  
-    <a 
-      href="https://maps.app.goo.gl/hyX1S1sKHKa4kPjx6" 
-      target="_blank" 
-      class="text-yellow-300 hover:underline mt-2 inline-block"
-    >
-      View on Map
-    </a>
-  </div>
-  
-  
-      <!-- Follow Us -->
-      <div>
-        <h2 class="text-xl font-bold mb-4">Follow Us</h2>
-        <div class="flex justify-center md:justify-start gap-4">
-          <a href="https://www.instagram.com/kletechiuceechapter?igsh=MXJjZXB3a3poNnB5eA==" class="hover:text-yellow-400" target="_blank">
-           <img src="images/instagram (4).png" class="w-[30px]">
-          </a>
-          <a href="https://www.linkedin.com/company/iucee-kletu/" class="hover:text-yellow-400" target="_blank">
-           <img src="images/linkedin (2).png" class="w-[30px]">
-          </a>
-        </div>
-      </div>
-    </div>
-    <p class="text-center text-sm mt-10">&copy; 2025 IUCEE Club. All rights reserved.</p>
-  </footer>
+<header id="navbar">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
+<div class="flex items-center gap-5">
+<img src="images/logo.png" class="h-12">
+<img src="images/iu.png" class="h-12">
 </div>
+<nav class="hidden md:flex gap-8 font-medium">
+<a href="index.html" class="nav-link">Home</a>
+<a href="about.html" class="nav-link">About</a>
+<a href="mentor.html" class="nav-link">Mentorship</a>
+<a href="vol.html" class="nav-link">Team</a>
+<a href="iasf25.html" class="nav-link">IASF 2025</a>
+<a href="iasf2026.html" class="nav-link">IASF 2026</a>
+<a href="com.html" class="nav-link text-lime-400">Community</a>
+</nav>
+<a href="reg.html" class="join-btn px-6 py-3 rounded-full">Join Us</a>
+</div>
+</header>
 
-<!-- Toggle script -->
+<section class="hero relative min-h-screen flex items-center">
+<img src="#" class="absolute inset-0 w-full h-full object-cover">
+<div class="relative z-10 max-w-6xl mx-auto px-8">
+<span class="text-lime-400 uppercase tracking-[6px]">IUCEE Student Chapter</span>
+<h1 class="text-6xl md:text-7xl font-black mt-5">Community Reachout</h1>
+<p class="mt-8 text-xl text-gray-300 max-w-3xl">Creating meaningful impact beyond the classroom through outreach, mentorship, sustainability and collaborative initiatives.</p>
+<a href="reg.html" class="inline-block mt-10 bg-lime-400 text-black px-8 py-4 rounded-full font-bold">Become a Volunteer</a>
+</div>
+</section>
+
+<section class="py-24">
+<div class="max-w-7xl mx-auto px-8">
+<div class="glass rounded-3xl p-10 text-center">
+<h2 class="text-4xl font-bold text-lime-400 mb-5">Our Mission</h2>
+<p class="text-gray-300 leading-8">We believe engineering should create positive change. Through outreach activities, technical workshops, mentorship programs and collaborations, we empower students and communities to learn, innovate and grow together.</p>
+</div>
+</div>
+</section>
+
+<section class="py-10">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-5xl font-bold text-center mb-16">What We Do</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<script></script>
+</div>
+</div>
+</section>
 <script>
-  const toggleBtn = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('nav-links');
-
-  toggleBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('hidden');
-  });
+const items=[
+["🎓","Student Mentorship"],["💻","Technical Workshops"],["🌱","Sustainability Drives"],
+["🤝","NGO Collaborations"],["🏫","School Outreach"],["🌍","Social Impact Projects"]];
+const grid=document.querySelector(".grid");
+items.forEach(i=>{
+grid.innerHTML+=`<div class="glass rounded-3xl p-8 hover:-translate-y-2 transition"><div class="text-5xl">${i[0]}</div><h3 class="text-2xl font-bold mt-5">${i[1]}</h3></div>`;
+});
 </script>
 
+<section class="py-24">
+<div class="max-w-6xl mx-auto px-8">
+<h2 class="text-5xl font-bold text-center mb-16">Our Impact</h2>
+<div class="grid md:grid-cols-4 gap-8 text-center">
+<div class="glass rounded-3xl p-8"><div class="text-5xl font-black text-lime-400">500+</div><p class="mt-3">Students Reached</p></div>
+<div class="glass rounded-3xl p-8"><div class="text-5xl font-black text-lime-400">30+</div><p class="mt-3">Events</p></div>
+<div class="glass rounded-3xl p-8"><div class="text-5xl font-black text-lime-400">15+</div><p class="mt-3">Collaborations</p></div>
+<div class="glass rounded-3xl p-8"><div class="text-5xl font-black text-lime-400">20+</div><p class="mt-3">Volunteers</p></div>
+</div>
+</div>
+</section>
+
+<section class="py-24">
+<div class="max-w-5xl mx-auto px-8">
+<div class="bg-gradient-to-r from-lime-400 to-green-500 rounded-3xl p-12 text-center">
+<h2 class="text-5xl font-black text-black">Join the Movement</h2>
+<p class="text-black text-lg mt-6">Together we can inspire innovation, empower communities and create lasting impact.</p>
+<a href="reg.html" class="inline-block mt-8 bg-black text-white px-8 py-4 rounded-full">Join Us</a>
+</div>
+</div>
+</section>
+
+<footer class="border-t border-white/10 py-10 text-center text-gray-400">
+© 2026 IUCEE Student Chapter. All Rights Reserved.
+</footer>
+
 <script>
-    const counters = document.querySelectorAll(".counter");
-    const speed = 100; // lower number = slower animation
-  
-    counters.forEach(counter => {
-      const updateCount = () => {
-        const target = +counter.getAttribute("data-target");
-        const count = +counter.innerText;
-  
-        const increment = Math.ceil(target / speed);
-  
-        if (count < target) {
-          counter.innerText = count + increment;
-          setTimeout(updateCount, 50); // delay between steps
-        } else {
-          counter.innerText = target + "+";
-        }
-      };
-  
-      updateCount();
-    });
-  </script>
+const navbar=document.getElementById("navbar");
+window.addEventListener("scroll",()=>window.scrollY>60?navbar.classList.add("scrolled"):navbar.classList.remove("scrolled"));
+</script>
 </body>
 </html>

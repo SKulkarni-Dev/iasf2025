@@ -1,201 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IASF 2025 | IUCEE Club</title>
-
-  <!-- Tailwind CDN + Custom Colors -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brown: '#563b1e',
-            beige: '#f1efe6'
-          }
-        }
-      }
-    }
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IASF 2025</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{font-family:Inter,sans-serif;background:#071322;color:#fff}
+#navbar{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:95%;max-width:1280px;z-index:1000;background:rgba(255,255,255,.12);backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.22);border-radius:22px;box-shadow:0 10px 35px rgba(0,0,0,.12);transition:.35s}
+#navbar.scrolled{background:rgba(255,255,255,.82)}
+.nav-link{color:#fff;transition:.3s}.nav-link:hover{color:#9BE200}
+#navbar.scrolled .nav-link{color:#1e293b}
+.join-btn{background:#2563eb;color:#fff;border-radius:999px;padding:.8rem 1.5rem}
+.hero:before{content:'';position:absolute;inset:0;background:rgba(7,19,34,.65)}
+</style>
 </head>
+<body>
+<header id="navbar"><div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
+<div class="flex items-center gap-5"><img src="images/logo.png" class="h-12"><img src="images/iu.png" class="h-12"></div>
+<nav class="hidden md:flex gap-8 font-medium">
+<a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a><a href="mentor.html" class="nav-link">Mentorship</a><a href="vol.html" class="nav-link">Team</a><a href="iasf25.html" class="nav-link text-lime-400">IASF 2025</a><a href="iasf2026.html" class="nav-link">IASF 2026</a><a href="com.html" class="nav-link">Community</a>
+</nav><a href="reg.html" class="join-btn">Join Us</a></div></header>
 
-<body class="bg-[#952e36] text-gray-800">
+<section class="hero relative h-screen flex items-center justify-center">
+<img src="images/g6.jpg" class="absolute inset-0 w-full h-full object-cover">
+<div class="relative z-10 text-center px-6">
+<h1 class="text-7xl font-black">IASF 2025</h1>
+<p class="mt-6 text-xl text-gray-300">Memories from our participation.</p>
+</div></section>
 
-  <nav class="bg-[#952f36] shadow-md px-6  sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-     <!-- Logo -->
-     <img src="images/logo.png" style="width: 200px;">
-     <img src="images/iu.png" class="md:ml-[-200px] sm:ml-[-100px] sm:w-[20px]" style="width: 130px;">
-  
-      <!-- Hamburger (mobile) -->
-      <button id="menu-toggle" class="md:hidden text-[#f1efe6] focus:outline-none text-3xl">
-        ☰
-      </button>
-  
-      <!-- Nav Links -->
-      <ul id="nav-links" class="hidden md:flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 text-md font-medium absolute md:static top-16 left-0 w-full md:w-auto bg-[#952f36] md:bg-transparent px-6 py-4 md:py-0">
-        <li><a href="index.html" class="font-bold text-[#f1efe6] hover:text-[#f0a09f]">Home</a></li>
-        <li><a href="about.html" class="font-bold text-[#f1efe6] hover:text-[#f0a09f]">About</a></li>
-        <li><a href="mentor.html" class="font-bold text-[#f1efe6] hover:text-[#f0a09f]">Mentorship</a></li>
-        <li><a href="vol.html" class="font-bold text-[#f1efe6] hover:text-[#f0a09f]">Team</a></li>
-        <li><a href="iasf25.html" class="font-bold text-[#f1efe6] hover:text-[#f0a09f]">IASF 2025</a></li>
-        <li><a href="com.html" class="font-bold text-[#f1efe6] hover:text-[#f0a09f]">Community Reachout</a></li>
-        <li><a href="reg.html" target="_blank" class="font-bold text-[#f1efe6] hover:text-[#f0a09f]">Register</a></li>
-      </ul>
-    </div>
-  </nav>
-  <!-- IASF Projects Section -->
-
-<div class="bg-cover" style="background-image: url('https://i.pinimg.com/736x/e0/03/17/e0031757c9f645ad3394f288af477d87.jpg');">
-  <section class="pt-16 pb-16 px-6" >
-    <div class="text-center max-w-4xl mx-auto mb-10">
-      <h2 class="text-4xl font-bold text-[#832830] mb-4">IASF 2025 Projects</h2>
-      <p class="text-lg text-gray-700">Explore the impactful and innovative projects presented by our team at IASF 2025.</p>
-    </div>
-
-    <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
-      <!-- Project Card -->
-      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <h3 class="text-xl font-bold text-brown mb-2">Project Title</h3>
-        <p class="text-gray-700 text-sm">Short description about the project and its goal.</p>
-      </div>
-      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <h3 class="text-xl font-bold text-brown mb-2">Project Title</h3>
-        <p class="text-gray-700 text-sm">Short description about the project and its goal.</p>
-      </div>
-      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <h3 class="text-xl font-bold text-brown mb-2">Project Title</h3>
-        <p class="text-gray-700 text-sm">Short description about the project and its goal.</p>
-      </div>
-      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <h3 class="text-xl font-bold text-brown mb-2">Project Title</h3>
-        <p class="text-gray-700 text-sm">Short description about the project and its goal.</p>
-      </div>
-      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <h3 class="text-xl font-bold text-brown mb-2">Project Title</h3>
-        <p class="text-gray-700 text-sm">Short description about the project and its goal.</p>
-      </div>
-      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl hover:scale-105 transition transform duration-300">
-        <h3 class="text-xl font-bold text-brown mb-2">Project Title</h3>
-        <p class="text-gray-700 text-sm">Short description about the project and its goal.</p>
-      </div>
-      <!-- Copy-paste more cards for more projects -->
-    </div>
-  </section>
-
-  <!-- Team Members Section -->
-  <section class="pb-20 px-6 ">
-    <div class="text-center max-w-4xl mx-auto mb-10">
-      <h2 class="text-4xl font-bold text-[#832830] mb-4">Our Experience</h2>
-      <p class="text-lg text-gray-700">something wirtten here in one line</p>
-    </div>
-
-    <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
-      <!-- Team Member Card -->
-      <div class="bg-beige rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition duration-300">
-        <img src="images/g8.JPG" alt="Team Photo" class="mx-auto w-34 h-34 object-cover mb-4">
-       
-      </div>
-      <div class="bg-beige rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition duration-300">
-        <img src="images/g4.JPG" alt="Team Photo" class="mx-auto  object-cover w-34 h-[238px] mb-4">
-
-      </div>
-      <div class="bg-beige rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition duration-300">
-        <img src="images/g5.JPG" alt="Team Photo" class="mx-auto  object-cover  w-34 h-[238px] mb-4">
-      
-      </div>
-      <div class="bg-beige rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition duration-300">
-        <img src="images/g6.JPG" alt="Team Photo" class="mx-auto  object-cover  w-34 h-[238px] mb-4">
-       
-      </div>
-      <div class="bg-beige rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition duration-300">
-        <img src="images/g7.JPG" alt="Team Photo" class="mx-auto  object-cover  w-34 h-[238px] mb-4">
-      
-      </div>
-      <div class="bg-beige rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition duration-300">
-        <img src="images/g9.JPG" alt="Team Photo" class="mx-auto  object-cover  w-34 h-[238px] mb-4">
-   
-      </div>
-      <div class="bg-beige rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition duration-300">
-        <img src="images/g10.JPG" alt="Team Photo" class="mx-auto  object-cover  w-34 h-[238px] mb-4">
-       
-      </div>
-      <div class="bg-beige rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition duration-300">
-        <img src="images/g11.JPG" alt="Team Photo" class="mx-auto  object-cover  w-34 h-[238px] mb-4">
-        
-      </div>
-      <div class="bg-beige rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:scale-105 transition duration-300">
-        <img src="images/g12.JPG" alt="Team Photo" class="mx-auto  object-cover  w-34 h-[238px] mb-4">
-       
-      </div>
-     
-    </div>
-  </section>
-  <footer class="bg-[#952e36] text-[#f1efe6] px-6  mt-20">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
-  
-      <!-- Contact Us -->
-      <div>
-        <h1 class="text-xl font-bold mb-4 mt-10">Contact Us</h1>
-        <div class="py-5">
-  <h2 >President : Ramyasree Pulakunta</h2>
-        <p>Email: iuclubb@gmail.com</p>
-        <p>Phone: +91 num</p>
-      </div>
-  <h2>Vice President : Varsha Sangolli</h2>
-  <p>Email: iuclubb@gmail.com</p>
-  <p>Phone: +91 num</p>
-  <div class="py-5">
-    <h2 >Student Ambassador : Venkatesh K</h2>
-          <p>Email: iuclubb@gmail.com</p>
-          <p>Phone: +91 num</p>
-        </div>
-      </div>
-  
-      <!-- Location -->
-     <!-- Location -->
-  <div>
-    <h2 class="text-xl font-bold mb-4 mt-10">Location</h2>
-    <p>KLE Technological University</p>
-    <p>Hubballi, Karnataka - 580031</p>
-  
-    <a 
-      href="https://maps.app.goo.gl/hyX1S1sKHKa4kPjx6" 
-      target="_blank" 
-      class="text-yellow-300 hover:underline mt-2 inline-block"
-    >
-      View on Map
-    </a>
-  </div>
-  
-  
-      <!-- Follow Us -->
-      <div>
-        <h2 class="text-xl font-bold mb-4">Follow Us</h2>
-        <div class="flex justify-center md:justify-start gap-4">
-          <a href="https://www.instagram.com/kletechiuceechapter?igsh=MXJjZXB3a3poNnB5eA==" class="hover:text-yellow-400" target="_blank">
-           <img src="images/instagram (4).png" class="w-[30px]">
-          </a>
-          <a href="https://www.linkedin.com/company/iucee-kletu/" class="hover:text-yellow-400" target="_blank">
-           <img src="images/linkedin (2).png" class="w-[30px]">
-          </a>
-        </div>
-      </div>
-  
-    </div>
-    <p class="text-center text-sm mt-10">&copy; 2025 IUCEE Club. All rights reserved.</p>
-  </footer>
-</div>
-<!-- Toggle script -->
+<section class="max-w-7xl mx-auto py-20 px-8">
+<h2 class="text-5xl font-bold text-center mb-12">Gallery</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="rounded-3xl overflow-hidden bg-white/10 backdrop-blur border border-white/10"><img src="images/g1.jpg" class="w-full h-80 object-cover"></div>
+<div class="rounded-3xl overflow-hidden bg-white/10 backdrop-blur border border-white/10"><img src="images/g2.jpg" class="w-full h-80 object-cover"></div>
+<div class="rounded-3xl overflow-hidden bg-white/10 backdrop-blur border border-white/10"><img src="images/g3.jpg" class="w-full h-80 object-cover"></div>
+<div class="rounded-3xl overflow-hidden bg-white/10 backdrop-blur border border-white/10"><img src="images/g4.jpg" class="w-full h-80 object-cover"></div>
+<div class="rounded-3xl overflow-hidden bg-white/10 backdrop-blur border border-white/10"><img src="images/g5.jpg" class="w-full h-80 object-cover"></div>
+<div class="rounded-3xl overflow-hidden bg-white/10 backdrop-blur border border-white/10"><img src="images/g6.jpg" class="w-full h-80 object-cover"></div>
+<div class="rounded-3xl overflow-hidden bg-white/10 backdrop-blur border border-white/10"><img src="images/g7.jpg" class="w-full h-80 object-cover"></div>
+<div class="rounded-3xl overflow-hidden bg-white/10 backdrop-blur border border-white/10"><img src="images/g8.jpg" class="w-full h-80 object-cover"></div>
+</div></section>
 <script>
-  const toggleBtn = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('nav-links');
-
-  toggleBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('hidden');
-  });
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>window.scrollY>60?navbar.classList.add('scrolled'):navbar.classList.remove('scrolled'));
 </script>
-</body>
-</html>
+</body></html>

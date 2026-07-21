@@ -1,159 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us | IUCEE Club</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-[#253658] text-[#3d0106]">
-    <!-- Navbar -->
-    
-    <nav class="bg-[#a4c3d9] shadow-md px-6  sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto flex justify-between items-center">
-          <!-- Logo -->
-      <img src="images/logo.png" style="width: 200px;">
-      <img src="images/iu.png" class="md:ml-[-200px] sm:ml-[-100px] sm:w-[20px]" style="width: 130px;">
-    
-        <!-- Hamburger (mobile) -->
-        <button id="menu-toggle" class="md:hidden text-[#f1efe6] focus:outline-none text-3xl">
-          ☰
-        </button>
-    
-        <!-- Nav Links -->
-        <ul id="nav-links" class="hidden md:flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 text-md font-medium absolute md:static top-16 left-0 w-full md:w-auto bg-[#a4c3d9] md:bg-transparent px-6 py-4 md:py-0">
-          <li><a href="index.html" class="font-bold text-[#253657] hover:text-[#031A32]">Home</a></li>
-          <li><a href="about.html" class="font-bold text-[#253657] hover:text-[#031A32]">About</a></li>
-          <li><a href="mentor.html" class="font-bold text-[#253657] hover:text-[#031A32]">Mentorship</a></li>
-          <li><a href="vol.html" class="font-bold text-[#253657] hover:text-[#031A32]">Team</a></li>
-          <li><a href="iasf25.html" class="font-bold text-[#253657] hover:text-[#031A32]">IASF 2025</a></li>
-          <li><a href="com.html" class="font-bold text-[#253657] hover:text-[#031A32]">Community Reachout</a></li>
-          <li><a href="reg.html" target="_blank" class="font-bold text-[#253657] hover:text-[#031A32]">Register</a></li>
-        </ul>
-      </div>
-    </nav>
-    <!-- Hero Section -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | IASF</title>
 
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 
-    <!-- About Content Section -->
-    <section class="py-16 px-6 md:px-20 bg-cover" style="background-image: url('https://i.pinimg.com/736x/80/d2/9b/80d29b33f870b211f0f9be5a181c7e22.jpg');">
-        
-      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-        <div data-aos="fade-right">
-          <img src="https://shannonchance.net/wp-content/uploads/2024/01/screenshot-2024-01-24-at-10.35.00-am.png?w=1024" alt="IUCEE Team" class="rounded-xl shadow-lg" />
-        </div>
-        <div data-aos="fade-left">
-          <h3 class="text-3xl font-bold mb-4 text-[#253658]">About Us</h3>
-          <p class="text-lg text-[#1b396b] leading-relaxed">
-            The IUCEE Club at KLE Technological University is a student-led group that works to make engineering education more engaging, collaborative, and practical.
+<style>
+html{scroll-behavior:smooth}
+body{
+margin:0;
+font-family:Inter,Arial,sans-serif;
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+}
+#navbar{
+position:fixed;top:18px;left:50%;transform:translateX(-50%);
+width:95%;max-width:1280px;z-index:999;
+background:rgba(255,255,255,.14);
+backdrop-filter:blur(22px);
+border:1px solid rgba(255,255,255,.25);
+border-radius:22px;
+transition:.35s;
+}
+#navbar.scrolled{
+background:rgba(255,255,255,.82);
+}
+#navbar.scrolled a{color:#1e293b;}
+.nav-link{color:white;font-weight:600;transition:.3s}
+.nav-link:hover{color:#9BE200}
+.hero{
+position:relative;
+height:65vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:url('https://i.pinimg.com/736x/80/d2/9b/80d29b33f870b211f0f9be5a181c7e22.jpg') center/cover;
+}
+.hero:before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(120deg,rgba(5,15,30,.82),rgba(5,15,30,.45),rgba(5,15,30,.18));
+backdrop-filter:blur(4px);
+}
+.hero>*{position:relative;z-index:2}
+.glass{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(16px);
+border:1px solid rgba(255,255,255,.18);
+border-radius:24px;
+transition:.35s;
+}
+.glass:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 45px rgba(0,0,0,.35);
+border-color:#9BE200;
+}
+.counter{font-size:2.5rem;font-weight:bold;color:#9BE200}
+</style>
+</head>
 
-            We’re part of the IUCEE network, which connects students and educators across India and beyond to share ideas and improve how engineering is taught and learned.
-            
-            <h3 class="text-lg font-bold m-4 text-[#253658]">What We Do</h3>
-  <ul class="list-disc pl-6 space-y-2 text-[#1b396b]">
-    <li ><strong>Workshops & Talks</strong> to explore new tech and skills</li>
-    <li><strong>Mentorship</strong> for academic and personal growth</li>
-    <li><strong>Community Outreach</strong> through service and innovation</li>
-    <li><strong>National Events</strong> like IASF, where we proudly represent KLE Tech</li>
-  </ul>
-            
-        <p class="text-lg text-[#1b396b]">   <br> Why Join?
-           <br> It’s a space to grow, build meaningful connections, and be part of a community that supports learning, leadership, and real-world impact.
-          </p></p>
-        </div>
-      </div>
-         <!-- Mission & Vision Cards -->
-         <div class="mt-16 grid gap-10 md:grid-cols-2 max-w-5xl mx-auto px-4 " >
-            <!-- Mission -->
-            <div class="bg-[#4075a2]/40 rounded-2xl shadow-xl p-8 hover:scale-105 transition-transform duration-300" data-aos="fade-right">
-              <h3 class="text-2xl font-bold mb-3 text-[#2c83e6]">Our Mission</h3>
-              <p class="text-black">
-                At the IUCEE Club of KLE Technological University, our mission is to create a space where students can grow not just as engineers, but as thoughtful and capable individuals.
-                We aim to promote collaborative learning, critical thinking, and innovation by connecting students with mentors, experts, and real-world experiences.
-                Through workshops, outreach programs, and national-level events, we strive to build a community that values curiosity, leadership, and social impact — preparing our members to take on challenges that go beyond the classroom.
-              </p>
-            </div>
-    
-            <!-- Vision -->
-            <div class="bg-[#4075a2]/40 rounded-2xl shadow-xl p-8 hover:scale-105 transition-transform duration-300" data-aos="fade-left">
-              <h3 class="text-2xl font-bold mb-3 text-[#2c83e6]">Our Vision</h3>
-              <p class="text-black">
-                Our vision is to build a vibrant student community at KLE Technological University where knowledge is shared freely, leadership is nurtured, and learning is driven by purpose.
-We aim to be a platform that inspires students to explore new ideas, work on meaningful projects, and contribute positively to society.
-By staying connected with global educational trends and embracing collaboration, we hope to shape future engineers who are not just skilled, but also socially responsible and globally aware.
-              </p>
-            </div>
-          </div></div>
-    </section>
+<body>
 
-    <!-- Footer -->
-    <footer class="bg-[#253658] text-[#f1efe6] px-6  mt-10">
-      <div class="max-w-7xl sm:max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
-    
-        <!-- Contact Us -->
-        <div>
-          <h1 class="text-xl font-bold mb-4">Contact Us</h1>
-          <div class="py-5">
-    <h2 >President : Ramyasree Pulakunta</h2>
-          <p>Email: iuclubb@gmail.com</p>
-          <p>Phone: +91 num</p>
-        </div>
-    <h2>Vice President : Varsha Sangolli</h2>
-    <p>Email: iuclubb@gmail.com</p>
-    <p>Phone: +91 num</p>
-    <div class="py-5">
-      <h2 >Student Ambassador : Venkatesh K</h2>
-            <p>Email: iuclubb@gmail.com</p>
-            <p>Phone: +91 num</p>
-          </div>
-        </div>
-    
-        <!-- Location -->
-       <!-- Location -->
-    <div>
-      <h2 class="text-xl font-bold mb-4">Location</h2>
-      <p>KLE Technological University</p>
-      <p>Hubballi, Karnataka - 580031</p>
-    
-      <a 
-        href="https://maps.app.goo.gl/hyX1S1sKHKa4kPjx6" 
-        target="_blank" 
-        class="text-yellow-300 hover:underline mt-2 inline-block"
-      >
-        View on Map
-      </a>
-    </div>
-    
-    
-        <!-- Follow Us -->
-        <div>
-          <h2 class="text-xl font-bold mb-4">Follow Us</h2>
-          <div class="flex justify-center md:justify-start gap-4">
-            <a href="https://www.instagram.com/kletechiuceechapter?igsh=MXJjZXB3a3poNnB5eA==" class="hover:text-yellow-400" target="_blank">
-             <img src="images/instagram (4).png" class="w-[30px]">
-            </a>
-            <a href="https://www.linkedin.com/company/iucee-kletu/" class="hover:text-yellow-400" target="_blank">
-             <img src="images/linkedin (2).png" class="w-[30px]">
-            </a>
-          </div>
-        </div>
-    
-      </div>
-      <p class="text-center text-sm mt-10">&copy; 2025 KLETECH IUCEE Club. All rights reserved.</p>
-    </footer>
+<header id="navbar">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
+<div class="flex items-center gap-4">
+<img src="images/logo.png" class="h-12">
+<img src="images/iu.png" class="h-10">
+</div>
 
-    <!-- AOS Animation (Optional) -->
-     <!-- Toggle script -->
+<nav class="hidden md:flex gap-8">
+<a class="nav-link" href="index.html">Home</a>
+<a class="nav-link" href="about.html">About</a>
+<a class="nav-link" href="mentor.html">Mentorship</a>
+<a class="nav-link" href="vol.html">Team</a>
+<a class="nav-link" href="iasf25.html">IASF25</a>
+<a class="nav-link" href="iasf2026.html">IASF26</a>
+<a class="nav-link" href="com.html">Community Reachout</a>
+<a class="nav-link" href="reg.html" target="_blank">Register</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="text-center px-6" data-aos="zoom-in">
+<h1 class="text-6xl font-bold mb-5">About IASF</h1>
+<p class="text-xl max-w-3xl mx-auto">Building future engineers through innovation, sustainability, mentorship and global collaboration.</p>
+</div>
+</section>
+
+<section class="max-w-7xl mx-auto px-6 py-20">
+
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<img src="https://shannonchance.net/wp-content/uploads/2024/01/screenshot-2024-01-24-at-10.35.00-am.png?w=1024" class="rounded-3xl shadow-2xl hover:scale-105 transition duration-500" data-aos="fade-right">
+
+<div data-aos="fade-left">
+<h2 class="text-4xl font-bold mb-6">Who We Are</h2>
+<p class="text-slate-300 leading-8">
+The IUCEE Club at KLE Technological University is a student-led community dedicated to innovation, leadership and engineering excellence. Through workshops, mentorship and outreach, we empower students to solve real-world problems while creating meaningful impact.
+</p>
+</div>
+</div>
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 my-20 text-center">
+<div class="glass p-8"><div class="counter">150+</div><p>Members</p></div>
+<div class="glass p-8"><div class="counter">25+</div><p>Events</p></div>
+<div class="glass p-8"><div class="counter">10+</div><p>Mentors</p></div>
+<div class="glass p-8"><div class="counter">500+</div><p>Students Impacted</p></div>
+</div>
+
+<div class="grid md:grid-cols-2 gap-10">
+<div class="glass p-8" data-aos="fade-up">
+<h2 class="text-3xl font-bold text-[#9BE200] mb-4">Our Mission</h2>
+<p>To create a collaborative environment where students develop technical skills, leadership and social responsibility through engineering.</p>
+</div>
+
+<div class="glass p-8" data-aos="fade-up" data-aos-delay="150">
+<h2 class="text-3xl font-bold text-[#9BE200] mb-4">Our Vision</h2>
+<p>To become a leading student chapter inspiring innovation, sustainability and global collaboration among future engineers.</p>
+</div>
+</div>
+
+</section>
+
+<footer class="bg-slate-950 py-12">
+<div class="max-w-7xl mx-auto text-center">
+<p>&copy; 2025 KLETECH IUCEE Club. All rights reserved.</p>
+</div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  const toggleBtn = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('nav-links');
-
-  toggleBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('hidden');
-  });
+AOS.init({duration:900,once:true});
+const n=document.getElementById("navbar");
+window.addEventListener("scroll",()=>{window.scrollY>60?n.classList.add("scrolled"):n.classList.remove("scrolled");});
 </script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script>AOS.init();</script>
-  </body>
+
+</body>
 </html>
