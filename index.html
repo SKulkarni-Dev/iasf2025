@@ -12,8 +12,16 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-body{margin:0;font-family:Inter,sans-serif;background:#f8fafc;}
+body{margin:0;font-family:Inter,sans-serif;background:#f8fafc;overflow-x:hidden;}
 h1,h2,h3{font-family:Poppins,sans-serif;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
+.hamburger span{width:26px;height:3px;background:#fff;border-radius:2px;transition:.3s;}
+#navbar.scrolled .hamburger span{background:#1e293b;}
+#mobileMenu{display:none;flex-direction:column;padding:0 24px 20px;}
+#mobileMenu.open{display:flex;}
+#mobileMenu a{color:#fff;padding:10px 0;border-top:1px solid rgba(255,255,255,.12);font-weight:500;}
+#navbar.scrolled #mobileMenu a{color:#1e293b;border-top-color:rgba(0,0,0,.08);}
+@media(max-width:767px){.hamburger{display:flex;}}
 
 #navbar{
 position:fixed;
@@ -42,7 +50,7 @@ backdrop-filter:blur(28px);
 .join-btn{background:#2563eb;color:#fff;font-weight:600;transition:.3s;}
 .join-btn:hover{background:#1d4ed8;}
 
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:120px 0 60px;}
 .hero img{
 position:absolute;
 inset:0;
@@ -73,11 +81,11 @@ backdrop-filter:blur(3px);
 <body>
 
 <header id="navbar">
-<div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-8 py-3 sm:py-4">
 
-<div class="flex items-center gap-5">
-<img src="images/logo.jpeg" class="h-12">
-<img src="images/iu.png" class="h-12">
+<div class="flex items-center gap-3 sm:gap-5">
+<img src="images/logo.jpeg" class="h-9 sm:h-12">
+<img src="images/iu.png" class="h-8 sm:h-12">
 </div>
 
 <nav class="hidden md:flex gap-8 font-medium">
@@ -90,8 +98,21 @@ backdrop-filter:blur(3px);
 <a href="com.html" class="nav-link">Community</a>
 </nav>
 
-<a href="reg.html" class="join-btn px-6 py-3 rounded-full">Join Us</a>
+<div class="flex items-center gap-2 sm:gap-4">
+<a href="reg.html" class="join-btn hidden sm:inline-block px-6 py-3 rounded-full">Join Us</a>
+<button id="menuBtn" class="hamburger nav-link" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
 
+</div>
+<div id="mobileMenu">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="mentor.html">Mentorship</a>
+<a href="vol.html">Team</a>
+<a href="iasf25.html">IASF 2025</a>
+<a href="iasf2026.html">IASF 2026</a>
+<a href="com.html">Community</a>
+<a href="reg.html" class="join-btn !text-white text-center rounded-full mt-3 py-3">Join Us</a>
 </div>
 </header>
 
@@ -99,23 +120,23 @@ backdrop-filter:blur(3px);
 
 <img src="images/g2.jpg" id="carouselImage">
 
-<div class="hero-content max-w-6xl mx-auto px-8 text-white">
+<div class="hero-content max-w-6xl mx-auto px-6 sm:px-8 text-white">
 
-<p class="uppercase tracking-[7px] text-blue-300 mb-4">
+<p class="text-sm sm:text-base uppercase tracking-[4px] sm:tracking-[7px] text-blue-300 mb-4">
 AN IUCEE STUDENT CHAPTER
 </p>
 
-<h1 id="carouselHeading" class="text-6xl md:text-7xl font-extrabold leading-tight mb-6">
+<h1 id="carouselHeading" class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-6">
 Innovation &<br>Sustainability Forum
 </h1>
 
-<p id="carouselText" class="text-xl max-w-2xl leading-8">
+<p id="carouselText" class="text-base sm:text-xl max-w-2xl leading-7 sm:leading-8">
 Empowering students through innovation, leadership, mentorship and sustainable engineering.
 </p>
 
-<div class="flex gap-5 mt-10">
-<a href="reg.html" class="join-btn px-8 py-4 rounded-full">Join Community</a>
-<a href="about.html" class="border border-white px-8 py-4 rounded-full hover:bg-white hover:text-slate-900 transition">Explore</a>
+<div class="flex flex-wrap gap-4 sm:gap-5 mt-8 sm:mt-10">
+<a href="reg.html" class="join-btn px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base">Join Community</a>
+<a href="about.html" class="border border-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-white hover:text-slate-900 transition text-sm sm:text-base">Explore</a>
 </div>
 
 </div>
@@ -125,6 +146,10 @@ Empowering students through innovation, leadership, mentorship and sustainable e
 <script>
 const navbar=document.getElementById("navbar");
 window.addEventListener("scroll",()=>{window.scrollY>60?navbar.classList.add("scrolled"):navbar.classList.remove("scrolled");});
+const menuBtn=document.getElementById("menuBtn");
+const mobileMenu=document.getElementById("mobileMenu");
+menuBtn.addEventListener("click",()=>mobileMenu.classList.toggle("open"));
+mobileMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mobileMenu.classList.remove("open")));
 </script>
 
 </body>

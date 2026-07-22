@@ -6,27 +6,8 @@
   <title>Mentorship | IUCEE Club</title>
  
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[#071322] text-gray-800 ">
-
-  <!-- Navbar -->
-  <header id="navbar">
-<div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
-
-<div class="flex items-center gap-5">
-<img src="images/logo.jpeg" class="h-12">
-<img src="images/iu.png" class="h-12">
-</div>
-
-<nav class="hidden md:flex gap-8 font-medium">
-<a href="index.html" class="nav-link">Home</a>
-<a href="about.html" class="nav-link">About</a>
-<a href="mentor.html" class="nav-link">Mentorship</a>
-<a href="vol.html" class="nav-link">Team</a>
-<a href="iasf25.html" class="nav-link">IASF 2025</a>
-<a href="iasf2026.html" class="nav-link">IASF 2026</a>
-<a href="com.html" class="nav-link">Community</a>
-<style>
+  <style>
+  body{overflow-x:hidden;}
   #navbar{
 position:fixed;
 top:18px;
@@ -74,30 +55,69 @@ transition:.3s;
 .join-btn:hover{
 background:#1d4ed8;
 }
-</style>
-<script>
-const navbar = document.getElementById("navbar");
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+.hamburger span{width:26px;height:3px;background:#fff;border-radius:2px;transition:.3s}
+#navbar.scrolled .hamburger span{background:#1e293b}
+#mobileMenu{display:none;flex-direction:column;padding:0 24px 20px}
+#mobileMenu.open{display:flex}
+#mobileMenu a{color:#fff;padding:10px 0;border-top:1px solid rgba(255,255,255,.12);font-weight:500}
+#navbar.scrolled #mobileMenu a{color:#1e293b;border-top-color:rgba(0,0,0,.08)}
+@media(max-width:767px){.hamburger{display:flex}}
+  </style>
+</head>
+<body class="bg-[#071322] text-gray-800 ">
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 60) {
-        navbar.classList.add("scrolled");
-    } else {
-        navbar.classList.remove("scrolled");
-    }
-});
-</script>
+  <!-- Navbar -->
+  <header id="navbar">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-8 py-3 sm:py-4">
+
+<div class="flex items-center gap-3 sm:gap-5">
+<img src="images/logo.jpeg" class="h-9 sm:h-12">
+<img src="images/iu.png" class="h-8 sm:h-12">
+</div>
+
+<nav class="hidden md:flex gap-8 font-medium">
+<a href="index.html" class="nav-link">Home</a>
+<a href="about.html" class="nav-link">About</a>
+<a href="mentor.html" class="nav-link">Mentorship</a>
+<a href="vol.html" class="nav-link">Team</a>
+<a href="iasf25.html" class="nav-link">IASF 2025</a>
+<a href="iasf2026.html" class="nav-link">IASF 2026</a>
+<a href="com.html" class="nav-link">Community</a>
 </nav>
 
-<a href="reg.html" class="join-btn px-6 py-3 rounded-full">
-Join Us
-</a>
+<div class="flex items-center gap-2 sm:gap-4">
+<a href="reg.html" class="join-btn hidden sm:inline-block px-6 py-3 rounded-full">Join Us</a>
+<button id="menuBtn" class="hamburger nav-link" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
 
 </div>
+<div id="mobileMenu">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="mentor.html" class="text-lime-400">Mentorship</a>
+<a href="vol.html">Team</a>
+<a href="iasf25.html">IASF 2025</a>
+<a href="iasf2026.html">IASF 2026</a>
+<a href="com.html">Community</a>
+<a href="reg.html" class="join-btn !text-white text-center rounded-full mt-3 py-3">Join Us</a>
+</div>
 </header>
+<script>
+const navbar = document.getElementById("navbar");
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 60) { navbar.classList.add("scrolled"); }
+    else { navbar.classList.remove("scrolled"); }
+});
+const menuBtn=document.getElementById("menuBtn");
+const mobileMenu=document.getElementById("mobileMenu");
+menuBtn.addEventListener("click",()=>mobileMenu.classList.toggle("open"));
+mobileMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mobileMenu.classList.remove("open")));
+</script>
   <!-- ================= HERO ================= -->
 <div class="bg-[#071322]">
 
-<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden" style="padding:120px 0 60px">
 
     <!-- Background -->
     <div class="absolute inset-0">
@@ -114,22 +134,22 @@ Join Us
     <div class="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-cyan-400/10 blur-3xl animate-pulse"></div>
 
     <!-- Hero -->
-    <div class="relative z-10 max-w-6xl mx-auto px-8">
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-8">
 
-        <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-12">
+        <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-6 sm:p-12">
 
-            <span class="px-5 py-2 rounded-full bg-lime-400 text-black font-bold">
+            <span class="px-4 sm:px-5 py-2 rounded-full bg-lime-400 text-black font-bold text-sm sm:text-base">
                 IUCEE Student Chapter
             </span>
 
-            <h1 class="text-6xl font-black text-white mt-6">
+            <h1 class="text-3xl sm:text-4xl md:text-6xl font-black text-white mt-6">
                 Mentorship that
                 <span class="text-lime-400">
                     Inspires Innovation
                 </span>
             </h1>
 
-            <p class="text-gray-300 text-xl mt-6 leading-9">
+            <p class="text-gray-300 text-base sm:text-xl mt-6 leading-7 sm:leading-9">
 
                 Our mentorship program empowers students through
                 faculty guidance, senior mentorship, alumni support,
@@ -139,11 +159,11 @@ Join Us
 
             </p>
 
-            <div class="mt-10 flex gap-5">
+            <div class="mt-8 sm:mt-10 flex flex-wrap gap-4 sm:gap-5">
 
                 <a href="#about"
 
-                   class="px-8 py-4 rounded-full bg-lime-400 text-black font-bold hover:scale-105 transition">
+                   class="px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-lime-400 text-black font-bold hover:scale-105 transition text-sm sm:text-base">
 
                     Learn More
 
@@ -151,7 +171,7 @@ Join Us
 
                 <a href="reg.html"
 
-                   class="px-8 py-4 rounded-full border border-white text-white hover:bg-white/10 transition">
+                   class="px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-white text-white hover:bg-white/10 transition text-sm sm:text-base">
 
                     Join Program
 
@@ -167,13 +187,13 @@ Join Us
 
 <!-- ================= ABOUT ================= -->
 
-<section id="about" class="py-24">
+<section id="about" class="py-14 sm:py-24">
 
-<div class="max-w-7xl mx-auto px-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-8">
 
 <div class="text-center mb-16">
 
-<h2 class="text-5xl font-bold text-white">
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
 
 About the Mentorship Program
 
@@ -244,13 +264,13 @@ Interact with alumni and professionals who provide valuable insights into career
 </section>
 <!-- ================= MENTORSHIP JOURNEY ================= -->
 
-<section class="py-24">
+<section class="py-14 sm:py-24">
 
-    <div class="max-w-7xl mx-auto px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
 
         <div class="text-center mb-20">
 
-            <h2 class="text-5xl font-bold text-white">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
                 Your Mentorship Journey
             </h2>
 
@@ -262,7 +282,7 @@ Interact with alumni and professionals who provide valuable insights into career
 
         </div>
 
-        <div class="grid md:grid-cols-5 gap-8">
+        <div class="grid sm:grid-cols-2 md:grid-cols-5 gap-6 sm:gap-8">
 
             <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 text-center hover:scale-105 transition">
 
@@ -345,13 +365,13 @@ Interact with alumni and professionals who provide valuable insights into career
 
 <!-- ================= MENTORSHIP ECOSYSTEM ================= -->
 
-<section class="py-24 bg-[#0b1d2d]">
+<section class="py-14 sm:py-24 bg-[#0b1d2d]">
 
-    <div class="max-w-7xl mx-auto px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
 
         <div class="text-center mb-16">
 
-            <h2 class="text-5xl font-bold text-white">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
                 Mentorship Ecosystem
             </h2>
 
@@ -449,13 +469,13 @@ Interact with alumni and professionals who provide valuable insights into career
 </section>
 <!-- ================= SKILLS ================= -->
 
-<section class="py-24">
+<section class="py-14 sm:py-24">
 
-    <div class="max-w-7xl mx-auto px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
 
         <div class="text-center mb-16">
 
-            <h2 class="text-5xl font-bold text-white">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
                 Skills You'll Develop
             </h2>
 
@@ -522,13 +542,13 @@ Interact with alumni and professionals who provide valuable insights into career
 
 <!-- ================= WHY JOIN ================= -->
 
-<section class="py-24 bg-[#0b1d2d]">
+<section class="py-14 sm:py-24 bg-[#0b1d2d]">
 
-    <div class="max-w-7xl mx-auto px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
 
         <div class="text-center mb-16">
 
-            <h2 class="text-5xl font-bold text-white">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
                 Why Join the Mentorship Program?
             </h2>
 
@@ -589,13 +609,13 @@ Interact with alumni and professionals who provide valuable insights into career
 
 <!-- ================= CALL TO ACTION ================= -->
 
-<section class="py-24">
+<section class="py-14 sm:py-24">
 
-    <div class="max-w-5xl mx-auto px-8">
+    <div class="max-w-5xl mx-auto px-4 sm:px-8">
 
         <div class="bg-gradient-to-r from-lime-400 to-green-500 rounded-3xl p-12 text-center shadow-2xl">
 
-            <h2 class="text-5xl font-black text-black mb-6">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-black mb-6">
 
                 Ready to Begin Your Journey?
 

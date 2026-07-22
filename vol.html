@@ -6,21 +6,27 @@
 <title>Team | IASF</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-body{margin:0;background:#08111f;font-family:Arial,sans-serif}
+body{margin:0;background:#08111f;font-family:Arial,sans-serif;overflow-x:hidden}
 #navbar{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:95%;max-width:1280px;background:rgba(255,255,255,.14);backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.2);border-radius:22px;z-index:999}
 .nav a{color:#fff;text-decoration:none;font-weight:600}
-.hero{height:60vh;background:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80') center/cover;position:relative;display:flex;align-items:center;justify-content:center}
+.hero{min-height:55vh;background:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80') center/cover;position:relative;display:flex;align-items:center;justify-content:center;padding:110px 0 40px}
 .hero:before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(8,17,31,.75),rgba(8,17,31,.45));backdrop-filter:blur(3px)}
 .glass{background:rgba(255,255,255,.08);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.18);border-radius:24px;transition:.35s}
 .glass:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 20px 40px rgba(0,0,0,.35);border-color:#9BE200}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+.hamburger span{width:26px;height:3px;background:#fff;border-radius:2px;transition:.3s}
+#mobileMenu{display:none;flex-direction:column;padding:0 24px 20px}
+#mobileMenu.open{display:flex}
+#mobileMenu a{color:#fff;text-decoration:none;padding:10px 0;border-top:1px solid rgba(255,255,255,.12);font-weight:500}
+@media(max-width:767px){.hamburger{display:flex}}
 </style>
 </head>
 <body>
 <header id="navbar">
-<div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
-    <div class="flex items-center gap-4">
-      <img src="images/logo.jpeg" class="h-12">
-      <img src="images/iu.jpg" class="h-10">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-8 py-3 sm:py-4">
+    <div class="flex items-center gap-3 sm:gap-4">
+      <img src="images/logo.jpeg" class="h-9 sm:h-12">
+      <img src="images/iu.jpg" class="h-8 sm:h-10">
     </div>
     <nav class="nav hidden md:flex gap-8">
       <a href="index.html">Home</a>
@@ -32,15 +38,26 @@ body{margin:0;background:#08111f;font-family:Arial,sans-serif}
       <a href="com.html">Community Reachout</a>
       <a href="reg.html">Register</a>
     </nav>
+    <button id="menuBtn" class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="mentor.html">Mentorship</a>
+      <a href="vol.html">Team</a>
+      <a href="iasf25.html">IASF25</a>
+      <a href="iasf2026.html">IASF26</a>
+      <a href="com.html">Community Reachout</a>
+      <a href="reg.html">Register</a>
   </div>
 </header>
 <section class="hero">
-  <div style="position:relative;text-align:center;color:white">
-    <h1 style="font-size:60px;font-weight:800">Meet Our Team</h1>
-    <p>The people driving innovation, leadership and sustainability.</p>
+  <div style="position:relative;text-align:center;color:white" class="px-6">
+    <h1 class="text-3xl sm:text-5xl" style="font-weight:800">Meet Our Team</h1>
+    <p class="text-sm sm:text-base mt-2">The people driving innovation, leadership and sustainability.</p>
   </div>
 </section>
-<section class="px-6 py-16">
+<section class="px-4 sm:px-6 py-10 sm:py-16">
 <h2 class="text-3xl font-bold text-center text-white mt-16 mb-8">Leadership</h2><div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
 <div class="glass p-6 text-center">
@@ -150,4 +167,10 @@ body{margin:0;background:#08111f;font-family:Arial,sans-serif}
 </div>
 </section>
 <footer class="text-center text-white py-8 border-t border-slate-700">© 2025 IASF | KLE Technological University</footer>
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const mobileMenu=document.getElementById('mobileMenu');
+menuBtn.addEventListener('click',()=>mobileMenu.classList.toggle('open'));
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileMenu.classList.remove('open')));
+</script>
 </body></html>

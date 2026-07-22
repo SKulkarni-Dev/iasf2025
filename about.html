@@ -17,6 +17,14 @@ background:#0f172a;
 color:white;
 overflow-x:hidden;
 }
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
+.hamburger span{width:26px;height:3px;background:#fff;border-radius:2px;transition:.3s;}
+#navbar.scrolled .hamburger span{background:#1e293b;}
+#mobileMenu{display:none;flex-direction:column;padding:0 24px 20px;}
+#mobileMenu.open{display:flex;}
+#mobileMenu a{color:#fff;padding:10px 0;border-top:1px solid rgba(255,255,255,.12);font-weight:500;}
+#navbar.scrolled #mobileMenu a{color:#1e293b;border-top-color:rgba(0,0,0,.08);}
+@media(max-width:767px){.hamburger{display:flex;}}
 #navbar{
 position:fixed;top:18px;left:50%;transform:translateX(-50%);
 width:95%;max-width:1280px;z-index:999;
@@ -34,11 +42,12 @@ background:rgba(255,255,255,.82);
 .nav-link:hover{color:#9BE200}
 .hero{
 position:relative;
-height:65vh;
+min-height:55vh;
 display:flex;
 align-items:center;
 justify-content:center;
 background:url('https://i.pinimg.com/736x/80/d2/9b/80d29b33f870b211f0f9be5a181c7e22.jpg') center/cover;
+padding:110px 0 40px;
 }
 .hero:before{
 content:"";
@@ -67,10 +76,10 @@ border-color:#9BE200;
 <body>
 
 <header id="navbar">
-<div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
-<div class="flex items-center gap-4">
-<img src="images/logo.jpeg" class="h-12">
-<img src="images/iu.png" class="h-10">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-8 py-3 sm:py-4">
+<div class="flex items-center gap-3 sm:gap-4">
+<img src="images/logo.jpeg" class="h-9 sm:h-12">
+<img src="images/iu.png" class="h-8 sm:h-10">
 </div>
 
 <nav class="hidden md:flex gap-8">
@@ -83,44 +92,55 @@ border-color:#9BE200;
 <a class="nav-link" href="com.html">Community Reachout</a>
 <a class="nav-link" href="reg.html" target="_blank">Register</a>
 </nav>
+<button id="menuBtn" class="hamburger nav-link" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div id="mobileMenu">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="mentor.html">Mentorship</a>
+<a href="vol.html">Team</a>
+<a href="iasf25.html">IASF25</a>
+<a href="iasf2026.html">IASF26</a>
+<a href="com.html">Community Reachout</a>
+<a href="reg.html" target="_blank">Register</a>
 </div>
 </header>
 
 <section class="hero">
 <div class="text-center px-6" data-aos="zoom-in">
-<h1 class="text-6xl font-bold mb-5">About IASF</h1>
-<p class="text-xl max-w-3xl mx-auto">Building future engineers through innovation, sustainability, mentorship and global collaboration.</p>
+<h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-5">About IASF</h1>
+<p class="text-base sm:text-lg md:text-xl max-w-3xl mx-auto">Building future engineers through innovation, sustainability, mentorship and global collaboration.</p>
 </div>
 </section>
 
-<section class="max-w-7xl mx-auto px-6 py-20">
+<section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
 
-<div class="grid md:grid-cols-2 gap-12 items-center">
-<img src="https://shannonchance.net/wp-content/uploads/2024/01/screenshot-2024-01-24-at-10.35.00-am.png?w=1024" class="rounded-3xl shadow-2xl hover:scale-105 transition duration-500" data-aos="fade-right">
+<div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+<img src="https://shannonchance.net/wp-content/uploads/2024/01/screenshot-2024-01-24-at-10.35.00-am.png?w=1024" class="rounded-3xl shadow-2xl hover:scale-105 transition duration-500 w-full" data-aos="fade-right">
 
 <div data-aos="fade-left">
-<h2 class="text-4xl font-bold mb-6">Who We Are</h2>
+<h2 class="text-3xl sm:text-4xl font-bold mb-6">Who We Are</h2>
 <p class="text-slate-300 leading-8">
 The IUCEE Club at KLE Technological University is a student-led community dedicated to innovation, leadership and engineering excellence. Through workshops, mentorship and outreach, we empower students to solve real-world problems while creating meaningful impact.
 </p>
 </div>
 </div>
 
-<div class="grid grid-cols-2 md:grid-cols-4 gap-6 my-20 text-center">
-<div class="glass p-8"><div class="counter">150+</div><p>Members</p></div>
-<div class="glass p-8"><div class="counter">25+</div><p>Events</p></div>
-<div class="glass p-8"><div class="counter">10+</div><p>Mentors</p></div>
-<div class="glass p-8"><div class="counter">500+</div><p>Students Impacted</p></div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 my-12 sm:my-20 text-center">
+<div class="glass p-4 sm:p-8"><div class="counter text-2xl sm:text-4xl">150+</div><p class="text-sm sm:text-base">Members</p></div>
+<div class="glass p-4 sm:p-8"><div class="counter text-2xl sm:text-4xl">25+</div><p class="text-sm sm:text-base">Events</p></div>
+<div class="glass p-4 sm:p-8"><div class="counter text-2xl sm:text-4xl">10+</div><p class="text-sm sm:text-base">Mentors</p></div>
+<div class="glass p-4 sm:p-8"><div class="counter text-2xl sm:text-4xl">500+</div><p class="text-sm sm:text-base">Students Impacted</p></div>
 </div>
 
-<div class="grid md:grid-cols-2 gap-10">
-<div class="glass p-8" data-aos="fade-up">
-<h2 class="text-3xl font-bold text-[#9BE200] mb-4">Our Mission</h2>
+<div class="grid md:grid-cols-2 gap-6 md:gap-10">
+<div class="glass p-6 sm:p-8" data-aos="fade-up">
+<h2 class="text-2xl sm:text-3xl font-bold text-[#9BE200] mb-4">Our Mission</h2>
 <p>To create a collaborative environment where students develop technical skills, leadership and social responsibility through engineering.</p>
 </div>
 
-<div class="glass p-8" data-aos="fade-up" data-aos-delay="150">
-<h2 class="text-3xl font-bold text-[#9BE200] mb-4">Our Vision</h2>
+<div class="glass p-6 sm:p-8" data-aos="fade-up" data-aos-delay="150">
+<h2 class="text-2xl sm:text-3xl font-bold text-[#9BE200] mb-4">Our Vision</h2>
 <p>To become a leading student chapter inspiring innovation, sustainability and global collaboration among future engineers.</p>
 </div>
 </div>
@@ -138,6 +158,10 @@ The IUCEE Club at KLE Technological University is a student-led community dedica
 AOS.init({duration:900,once:true});
 const n=document.getElementById("navbar");
 window.addEventListener("scroll",()=>{window.scrollY>60?n.classList.add("scrolled"):n.classList.remove("scrolled");});
+const menuBtn=document.getElementById("menuBtn");
+const mobileMenu=document.getElementById("mobileMenu");
+menuBtn.addEventListener("click",()=>mobileMenu.classList.toggle("open"));
+mobileMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mobileMenu.classList.remove("open")));
 </script>
 
 </body>

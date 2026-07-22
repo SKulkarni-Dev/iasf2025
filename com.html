@@ -7,7 +7,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-body{font-family:Inter,sans-serif;background:#071322;color:#fff}
+body{font-family:Inter,sans-serif;background:#071322;color:#fff;overflow-x:hidden}
 #navbar{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:95%;max-width:1280px;z-index:1000;background:rgba(255,255,255,.12);backdrop-filter:blur(22px);border:1px solid rgba(255,255,255,.22);border-radius:22px;box-shadow:0 10px 35px rgba(0,0,0,.12);transition:.35s}
 #navbar.scrolled{background:rgba(255,255,255,.82)}
 .nav-link{color:#fff;transition:.3s}
@@ -17,15 +17,23 @@ body{font-family:Inter,sans-serif;background:#071322;color:#fff}
 .join-btn:hover{background:#1d4ed8}
 .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(7,19,34,.85),rgba(7,19,34,.45))}
 .glass{background:rgba(255,255,255,.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.12)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+.hamburger span{width:26px;height:3px;background:#fff;border-radius:2px;transition:.3s}
+#navbar.scrolled .hamburger span{background:#1e293b}
+#mobileMenu{display:none;flex-direction:column;padding:0 24px 20px}
+#mobileMenu.open{display:flex}
+#mobileMenu a{color:#fff;padding:10px 0;border-top:1px solid rgba(255,255,255,.12);font-weight:500}
+#navbar.scrolled #mobileMenu a{color:#1e293b;border-top-color:rgba(0,0,0,.08)}
+@media(max-width:767px){.hamburger{display:flex}}
 </style>
 </head>
 <body>
 
 <header id="navbar">
-<div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
-<div class="flex items-center gap-5">
-<img src="images/logo.jpeg" class="h-12">
-<img src="images/iu.png" class="h-12">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-8 py-3 sm:py-4">
+<div class="flex items-center gap-3 sm:gap-5">
+<img src="images/logo.jpeg" class="h-9 sm:h-12">
+<img src="images/iu.png" class="h-8 sm:h-12">
 </div>
 <nav class="hidden md:flex gap-8 font-medium">
 <a href="index.html" class="nav-link">Home</a>
@@ -36,33 +44,46 @@ body{font-family:Inter,sans-serif;background:#071322;color:#fff}
 <a href="iasf2026.html" class="nav-link">IASF 2026</a>
 <a href="com.html" class="nav-link text-lime-400">Community</a>
 </nav>
-<a href="reg.html" class="join-btn px-6 py-3 rounded-full">Join Us</a>
+<div class="flex items-center gap-2 sm:gap-4">
+<a href="reg.html" class="join-btn hidden sm:inline-block px-6 py-3 rounded-full">Join Us</a>
+<button id="menuBtn" class="hamburger nav-link" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</div>
+<div id="mobileMenu">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="mentor.html">Mentorship</a>
+<a href="vol.html">Team</a>
+<a href="iasf25.html">IASF 2025</a>
+<a href="iasf2026.html">IASF 2026</a>
+<a href="com.html" class="text-lime-400">Community</a>
+<a href="reg.html" class="join-btn !text-white text-center rounded-full mt-3 py-3">Join Us</a>
 </div>
 </header>
 
-<section class="hero relative min-h-screen flex items-center">
+<section class="hero relative min-h-screen flex items-center" style="padding:120px 0 60px">
 <img src="#" class="absolute inset-0 w-full h-full object-cover">
-<div class="relative z-10 max-w-6xl mx-auto px-8">
-<span class="text-lime-400 uppercase tracking-[6px]">IUCEE Student Chapter</span>
-<h1 class="text-6xl md:text-7xl font-black mt-5">Community Reachout</h1>
-<p class="mt-8 text-xl text-gray-300 max-w-3xl">Creating meaningful impact beyond the classroom through outreach, mentorship, sustainability and collaborative initiatives.</p>
-<a href="reg.html" class="inline-block mt-10 bg-lime-400 text-black px-8 py-4 rounded-full font-bold">Become a Volunteer</a>
+<div class="relative z-10 max-w-6xl mx-auto px-6 sm:px-8">
+<span class="text-lime-400 uppercase tracking-[3px] sm:tracking-[6px] text-sm sm:text-base">IUCEE Student Chapter</span>
+<h1 class="text-4xl sm:text-5xl md:text-7xl font-black mt-5">Community Reachout</h1>
+<p class="mt-6 sm:mt-8 text-base sm:text-xl text-gray-300 max-w-3xl">Creating meaningful impact beyond the classroom through outreach, mentorship, sustainability and collaborative initiatives.</p>
+<a href="reg.html" class="inline-block mt-8 sm:mt-10 bg-lime-400 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-sm sm:text-base">Become a Volunteer</a>
 </div>
 </section>
 
-<section class="py-24">
-<div class="max-w-7xl mx-auto px-8">
-<div class="glass rounded-3xl p-10 text-center">
-<h2 class="text-4xl font-bold text-lime-400 mb-5">Our Mission</h2>
-<p class="text-gray-300 leading-8">We believe engineering should create positive change. Through outreach activities, technical workshops, mentorship programs and collaborations, we empower students and communities to learn, innovate and grow together.</p>
+<section class="py-14 sm:py-24">
+<div class="max-w-7xl mx-auto px-4 sm:px-8">
+<div class="glass rounded-3xl p-6 sm:p-10 text-center">
+<h2 class="text-2xl sm:text-4xl font-bold text-lime-400 mb-5">Our Mission</h2>
+<p class="text-gray-300 leading-7 sm:leading-8">We believe engineering should create positive change. Through outreach activities, technical workshops, mentorship programs and collaborations, we empower students and communities to learn, innovate and grow together.</p>
 </div>
 </div>
 </section>
 
-<section class="py-10">
-<div class="max-w-7xl mx-auto px-8">
-<h2 class="text-5xl font-bold text-center mb-16">What We Do</h2>
-<div class="grid md:grid-cols-3 gap-8">
+<section class="py-8 sm:py-10">
+<div class="max-w-7xl mx-auto px-4 sm:px-8">
+<h2 class="text-3xl sm:text-5xl font-bold text-center mb-10 sm:mb-16">What We Do</h2>
+<div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
 <script></script>
 </div>
 </div>
@@ -77,24 +98,24 @@ grid.innerHTML+=`<div class="glass rounded-3xl p-8 hover:-translate-y-2 transiti
 });
 </script>
 
-<section class="py-24">
-<div class="max-w-6xl mx-auto px-8">
-<h2 class="text-5xl font-bold text-center mb-16">Our Impact</h2>
-<div class="grid md:grid-cols-4 gap-8 text-center">
-<div class="glass rounded-3xl p-8"><div class="text-5xl font-black text-lime-400">500+</div><p class="mt-3">Students Reached</p></div>
-<div class="glass rounded-3xl p-8"><div class="text-5xl font-black text-lime-400">30+</div><p class="mt-3">Events</p></div>
-<div class="glass rounded-3xl p-8"><div class="text-5xl font-black text-lime-400">15+</div><p class="mt-3">Collaborations</p></div>
-<div class="glass rounded-3xl p-8"><div class="text-5xl font-black text-lime-400">20+</div><p class="mt-3">Volunteers</p></div>
+<section class="py-14 sm:py-24">
+<div class="max-w-6xl mx-auto px-4 sm:px-8">
+<h2 class="text-3xl sm:text-5xl font-bold text-center mb-10 sm:mb-16">Our Impact</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-center">
+<div class="glass rounded-3xl p-4 sm:p-8"><div class="text-2xl sm:text-5xl font-black text-lime-400">500+</div><p class="mt-2 sm:mt-3 text-sm sm:text-base">Students Reached</p></div>
+<div class="glass rounded-3xl p-4 sm:p-8"><div class="text-2xl sm:text-5xl font-black text-lime-400">30+</div><p class="mt-2 sm:mt-3 text-sm sm:text-base">Events</p></div>
+<div class="glass rounded-3xl p-4 sm:p-8"><div class="text-2xl sm:text-5xl font-black text-lime-400">15+</div><p class="mt-2 sm:mt-3 text-sm sm:text-base">Collaborations</p></div>
+<div class="glass rounded-3xl p-4 sm:p-8"><div class="text-2xl sm:text-5xl font-black text-lime-400">20+</div><p class="mt-2 sm:mt-3 text-sm sm:text-base">Volunteers</p></div>
 </div>
 </div>
 </section>
 
-<section class="py-24">
-<div class="max-w-5xl mx-auto px-8">
-<div class="bg-gradient-to-r from-lime-400 to-green-500 rounded-3xl p-12 text-center">
-<h2 class="text-5xl font-black text-black">Join the Movement</h2>
-<p class="text-black text-lg mt-6">Together we can inspire innovation, empower communities and create lasting impact.</p>
-<a href="reg.html" class="inline-block mt-8 bg-black text-white px-8 py-4 rounded-full">Join Us</a>
+<section class="py-14 sm:py-24">
+<div class="max-w-5xl mx-auto px-4 sm:px-8">
+<div class="bg-gradient-to-r from-lime-400 to-green-500 rounded-3xl p-8 sm:p-12 text-center">
+<h2 class="text-3xl sm:text-5xl font-black text-black">Join the Movement</h2>
+<p class="text-black text-base sm:text-lg mt-4 sm:mt-6">Together we can inspire innovation, empower communities and create lasting impact.</p>
+<a href="reg.html" class="inline-block mt-6 sm:mt-8 bg-black text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base">Join Us</a>
 </div>
 </div>
 </section>
@@ -106,6 +127,10 @@ grid.innerHTML+=`<div class="glass rounded-3xl p-8 hover:-translate-y-2 transiti
 <script>
 const navbar=document.getElementById("navbar");
 window.addEventListener("scroll",()=>window.scrollY>60?navbar.classList.add("scrolled"):navbar.classList.remove("scrolled"));
+const menuBtn=document.getElementById("menuBtn");
+const mobileMenu=document.getElementById("mobileMenu");
+menuBtn.addEventListener("click",()=>mobileMenu.classList.toggle("open"));
+mobileMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mobileMenu.classList.remove("open")));
 </script>
 </body>
 </html>
